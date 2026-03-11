@@ -14,11 +14,12 @@ Mizu Light is a product launch template designed for modern SaaS companies, digi
 
 ### Features
 
+- **Astro v6:** Built with the latest Astro framework for optimal performance.
 - **Pre-Built Pages:** Get started quickly with a full set of professionally designed pages, ready to launch right out of the box.
 - **Optimized 100/100 PageSpeed:** Mizu Light is built for speed, delivering lightning-fast load times and perfect scores on Google PageSpeed.
 - **Flexible Modular Blocks:** Every page is made from reusable, flexible blocks—easily add, rearrange, or expand content using our ever-growing library.
 - **Reusable UI Components:** Keep your design consistent and save time with a complete set of customizable, reusable components.
-- **Built with Astro v5 & Tailwind CSS v4:** Harness the latest frameworks for blazing-fast development and modern, utility-first styling.
+- **Built with Astro & Tailwind CSS v4:** Harness the latest frameworks for blazing-fast development and modern, utility-first styling.
 - **Light & Dark Mode:** Let users switch seamlessly between light and dark themes for a fully customizable experience.
 - **SEO-Ready:** Crafted with clean, semantic HTML and optimized metadata to help your site rank higher in search engines.
 - **Content Collections:** Organize, manage, and display content efficiently with Astro’s powerful content collections system.
@@ -32,7 +33,7 @@ Mizu Light is a product launch template designed for modern SaaS companies, digi
 
 After downloading the theme, install the dependencies and run it on your local server. Check the `package.json` file for available scripts.
 
-> **Note**: Requires Node.js version 20.3.0 or later.
+> **Note**: Requires Node.js version 22.12.0 or later.
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
