@@ -1,19 +1,8 @@
 ---
-// Pricing block
-// -------------------------
-// Uses JSON data with { subtitle, title, nav[{ id, index, label, color }], steps[{ id, index, title, subtitle, color, body[], cta, media{back,front} }] }
-// Renders: header, a <ul> with  nav links, then step blocks
-
-// Components
-// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-// - UI
 import PricingCard from '../../ui/cards/PricingCard.astro'
-
-// Content
-// - Data
 import pricing from '../../../data/json-files/pricing.json'
 ---
 
@@ -22,14 +11,10 @@ import pricing from '../../../data/json-files/pricing.json'
 		<Col span="12" style="transparent">
 			<ul class="pricing__toggle">
 				<li data-billing="annually" class="pricing__toggle-item active">
-					<span class="pricing__toggle-link"
-						><span class="hidden md:inline">Bill</span> Annually</span
-					>
+					<span class="pricing__toggle-link">IEEE Member</span>
 				</li>
 				<li data-billing="monthly" class="pricing__toggle-item">
-					<span class="pricing__toggle-link"
-						><span class="hidden md:inline">Bill</span> Monthly</span
-					>
+					<span class="pricing__toggle-link">Non-Member</span>
 				</li>
 			</ul>
 		</Col>

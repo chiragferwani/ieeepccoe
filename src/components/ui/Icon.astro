@@ -1,0 +1,33 @@
+---
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+interface Props {
+  name: string;
+  class?: string;
+  [key: string]: any;
+}
+
+const { name, class: className, ...rest } = Astro.props;
+
+let svgContent = '';
+try {
+  // Assuming icons are in src/icons/[name].svg
+  const filePath = join(process.cwd(), 'src', 'icons', `${name}.svg`);
+  const fileContent = await readFile(filePath, 'utf-8');
+  
+  // Extract the contents of the <svg> tag while keeping attributes or handling them
+  // A simple way is to just inject the whole SVG and let CSS handle classes
+  svgContent = fileContent;
+} catch (e) {
+  console.error(`Icon "${name}" not found in src/icons/`);
+}
+
+// Basic cleanup to inject classes if needed
+// We search for <svg and insert the class attribute
+if (className && svgContent.includes('<svg')) {
+  svgContent = svgContent.replace('<svg', `<svg class="${className}"`);
+}
+---
+
+<Fragment set:html={svgContent} />

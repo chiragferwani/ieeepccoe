@@ -1,43 +1,41 @@
 {
 	"logo": {
-		"src": "/logo-light.svg",
-		"srcDark": "/logo-dark.svg",
-		"alt": "Mizu Light logo"
+		"src": "/favicon.svg",
+		"srcDark": "/favicon.svg",
+		"alt": "PCCoE IEEE Summer School logo"
 	},
 	"footerAbout": {
-		"aboutText": "Mizu Light, from idea to impact, without the noise."
+		"aboutText": "PCCoE IEEE Summer School — Explore. Learn. Build."
 	},
 	"footerColumns": [
 		{
-			"title": "Your Launchpad",
+			"title": "Quick Links",
 			"links": [
 				{ "label": "Home", "href": "/" },
-				{ "label": "Features", "href": "/features" },
-				{ "label": "Get Started", "href": "/get-started" },
-				{ "label": "Pricing", "href": "/pricing" }
+				{ "label": "Programmes", "href": "/programmes" },
+				{ "label": "Overview", "href": "/" },
+				{ "label": "Register", "href": "/register" }
 			]
 		},
 		{
-			"title": "Meet the Crew",
+			"title": "About",
 			"links": [
-				{ "label": "About", "href": "/about" },
-				{ "label": "Blog", "href": "/blog" },
-				{ "label": "Contact", "href": "/contact" }
+				{ "label": "About PCCOE", "href": "https://www.pccoepune.com/" },
+				{ "label": "Updates", "href": "/updates" },
+				{ "label": "Contact Us", "href": "/contact" }
 			]
 		},
 		{
-			"title": "Let's Connect",
+			"title": "Follow Us",
 			"links": [
-				{ "label": "Twitter / X", "href": "https://x.com/yourhandle" },
-				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/yourcompany" },
-				{ "label": "GitHub", "href": "https://github.com/yourorg" },
-				{ "label": "LinkedIn", "href": "https://www.linkedin.com/in/yourprofile" },
-				{ "label": "Threads", "href": "https://www.threads.net/@yourhandle" }
+				{ "label": "Instagram", "href": "https://instagram.com/pccoe_ieee" },
+				{ "label": "LinkedIn", "href": "https://www.linkedin.com/company/pccoe-ieee-student-branch/" },
+				{ "label": "GitHub", "href": "https://github.com/pccoe-ieee" }
 			]
 		}
 	],
 	"copyright": {
-		"text": "Mizu Light, all rights reserved 2026",
+		"text": "PCCoE IEEE Student Branch, All Rights Reserved 2025",
 		"legal": [
 			{ "label": "Terms", "href": "/terms" },
 			{ "label": "Conditions", "href": "/conditions" },

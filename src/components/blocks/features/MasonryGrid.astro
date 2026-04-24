@@ -1,20 +1,10 @@
 ---
-// Masonry Feature Grid
-// ------------
-// Description: A masonry grid of features
-
-// Components
-// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-
-// - UI
 import { Image } from 'astro:assets'
 import FeatureCard from '../../ui/cards/FeatureImageCard.astro'
 
-// Content
-// - Assets
 import feature01Front from '../../../assets/features/masonry/feature_01_front.webp'
 import feature01Back from '../../../assets/features/masonry/feature_01_back.webp'
 import feature02Front from '../../../assets/features/masonry/feature_02_front.webp'
@@ -30,132 +20,68 @@ import feature04Back from '../../../assets/features/masonry/feature_04_back.webp
 		<Col span="4">
 			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
 				<div slot="content" class="max-w-xl">
-					<h3>Team Focused</h3>
+					<h3>Expert-Led Sessions</h3>
 					<p>
-						The more you use it, the smarter it gets. Mizu Light’s AI continuously adapts to your
-						workflows.
+						Learn from faculty, industry professionals, and researchers across specialised technical
+						domains with a curriculum designed for real-world impact.
 					</p>
 				</div>
 				<div slot="bg-front">
-					<Image
-						src={feature01Front}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature01Front} alt="Expert-led session" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 				<div slot="bg-back">
-					<Image
-						src={feature01Back}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature01Back} alt="Expert-led session" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 			</FeatureCard>
 		</Col>
 		<Col span="8">
 			<FeatureCard classes="h-full" parallaxOffset="50" style="solid" decorationType="all">
 				<div slot="content" class="max-w-lg">
-					<h3>Intelligent Alerts, Zero Noise</h3>
+					<h3>Hands-On Learning</h3>
 					<p>
-						Mizu Light uses AI to monitor your workflows and deliver precise notifications at the
-						right time.
+						Move beyond theory. Every domain includes labs, tool demos, and project-based tasks
+						designed to make learning stick.
 					</p>
 				</div>
 				<div slot="bg-front">
-					<Image
-						src={feature02Front}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature02Front} alt="Hands-on labs" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 				<div slot="bg-back">
-					<Image
-						src={feature02Back}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature02Back} alt="Hands-on labs" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 			</FeatureCard>
 		</Col>
 		<Col span="8">
 			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
 				<div slot="content" class="max-w-xl">
-					<h3>Team Focused</h3>
+					<h3>Certificate & Credits</h3>
 					<p>
-						The more you use it, the smarter it gets. Mizu’s AI continuously adapts to your
-						workflows.
+						Earn a certificate of participation after meeting attendance and project criteria.
+						Credits transfer options are available for enrolled PCCoE students.
 					</p>
 				</div>
 				<div slot="bg-front">
-					<Image
-						src={feature03Front}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature03Front} alt="Certificate and credits" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 				<div slot="bg-back">
-					<Image
-						src={feature03Back}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature03Back} alt="Certificate and credits" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 			</FeatureCard>
 		</Col>
 		<Col span="4">
 			<FeatureCard style="solid" classes="h-full" decorationType="all" parallaxOffset="20">
 				<div slot="content" class="max-w-lg">
-					<h3>AI-Powered Collaboration</h3>
+					<h3>Networking & Community</h3>
 					<p>
-						Work better together with a shared space built for teams of any size. Assign tasks,
-						leave feedback in context.
+						Connect with like-minded peers, join the IEEE student community, and grow your
+						professional network across engineering branches.
 					</p>
 				</div>
 				<div slot="bg-front">
-					<Image
-						src={feature04Front}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						layout="constrained"
-						class="feature__image"
-						height={300}
-					/>
+					<Image src={feature04Front} alt="Networking and community" loading="lazy" decoding="async" layout="constrained" class="feature__image" height={300} />
 				</div>
 				<div slot="bg-back">
-					<Image
-						src={feature04Back}
-						alt="AI-Powered Collaboration"
-						loading="lazy"
-						decoding="async"
-						class="feature__image"
-						layout="constrained"
-						height={300}
-					/>
+					<Image src={feature04Back} alt="Networking and community" loading="lazy" decoding="async" class="feature__image" layout="constrained" height={300} />
 				</div>
 			</FeatureCard>
 		</Col>

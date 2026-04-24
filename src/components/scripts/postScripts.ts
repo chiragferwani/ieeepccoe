@@ -17,12 +17,12 @@ export const postSubtitle = (author: any, dateStr: any) => {
 
 	if (author && date) {
 		const formattedName = formattedAuthorName(author)
-		return `<a href="/blog/author/${author}" class="transition-colors delay-300">${formattedName}, ${date}</a>`
+		return `<a href="/updates/author/${author}" class="transition-colors delay-300">${formattedName}, ${date}</a>`
 	}
 
 	if (author) {
 		const formattedName = formattedAuthorName(author)
-		return `<a href="/blog/author/${author}" class="transition-colors delay-300">${formattedName}</a>`
+		return `<a href="/updates/author/${author}" class="transition-colors delay-300">${formattedName}</a>`
 	}
 
 	if (date) return date

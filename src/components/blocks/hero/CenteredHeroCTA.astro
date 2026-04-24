@@ -1,31 +1,12 @@
 ---
-// Centered Hero CTA
-// ------------
-// Description: A hero section with a title and a subtitle, with a centered image
-// Properties:
-// - title: The title of the hero section
-// - subtitle: The subtitle of the hero section
-// - text: The text of the hero section
-// - buttonText: The text of the button
-// - buttonLink: The link of the button
-// - buttonClasses: Additional classes for the button
-// - classes: Additional classes for the section
-
-// Components
-// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 import Button from '../../ui/Button.astro'
-// - UI
 import Header from '../../ui/Header.astro'
 import { Image } from 'astro:assets'
-
-// Content
-// - Assets
 import screenshot from '../../../assets/hero/screenshot.svg'
 
-// - Props
 type Props = {
 	title?: string
 	subtitle?: string
@@ -35,7 +16,7 @@ type Props = {
 	buttonLink?: string
 	buttonClasses?: string
 	classes?: string
-	image?: string
+	image?: any
 }
 const {
 	title = '',
@@ -47,18 +28,20 @@ const {
 	classes = '',
 	image
 } = Astro.props
+
+const heroImage = image ?? screenshot
 ---
 
 <Section classes={`${classes ? classes : ''}`} spacerTop={true}>
 	<Row classes="gap-y-0!">
-		<!-- Intro Text -->
 		<Col span="12" classes="pt-16 lg:pt-24">
 			<Header
 				title={title}
 				subtitle={subtitle}
 				classes="text-center"
-				titleWidth="mx-auto max-w-3xl"
+				titleWidth="mx-auto max-w-4xl"
 			/>
+			{text && <p class="mx-auto mt-6 max-w-4xl px-6 text-center text-xl leading-9 lg:px-8">{text}</p>}
 		</Col>
 
 		<Col
@@ -70,14 +53,14 @@ const {
 			</div>
 			<div data-parallax-offset="80" class="parallax">
 				<Image
-					src={screenshot}
-					alt="Mizu Light"
+					src={heroImage}
+					alt="PCCoE IEEE Summer School"
 					class="mx-auto block"
-					layout="constrained"
 					decoding="async"
 					loading="eager"
 					fetchpriority="high"
 					width={1280}
+					inferSize
 				/>
 			</div>
 		</Col>

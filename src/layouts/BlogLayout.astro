@@ -1,41 +1,26 @@
 ---
-// Blog Layout
-// ------------
-// Description: A layout for blog posts
-// Properties:
-// - frontmatter: The frontmatter of the blog post
-
-// Imports
 const { frontmatter } = Astro.props
 
-// Components
-// - Layout
 import Layout from './Layout.astro'
 import Col from '../components/ui/Col.astro'
 import Row from '../components/ui/Row.astro'
 import Section from '../components/ui/Section.astro'
-// - Blocks
 import Hero from '../components/blocks/hero/SimpleHeroBasic.astro'
 import CTAPrimary from '../components/blocks/cta/CTAPrimary.astro'
-// - UI
-import Card from '../components/ui/cards/Card.astro'
 import DecorationBorder from '../components/ui/DecorationBorder.astro'
 import { Image } from 'astro:assets'
 
-// Content
-// - Formatting author slug like "john-doe" into "John Doe"
 export const formattedAuthorName = (author: string) =>
 	author
 		.split('-')
 		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 		.join(' ')
 
-// - CTA data
 const CTA = {
-	title: 'Launch your next big idea today',
-	text: 'Join creators, teams, and startups already turning their ideas into reality. Get started in minutes and see how simple launching can be when everything works together seamlessly.',
-	buttonText: 'Try it for free!',
-	buttonLink: '/contact'
+	title: 'Secure Your Spot at PCCoE IEEE Summer School',
+	text: 'Applications are reviewed on a rolling basis. Register early for better chances of getting your preferred domain.',
+	buttonText: 'Apply Now →',
+	buttonLink: '/register'
 }
 ---
 
@@ -64,7 +49,8 @@ const CTA = {
 								alt={frontmatter.title}
 								loading="lazy"
 								decoding="async"
-								layout="constrained"
+								width={1200}
+								height={675}
 							/>
 						</div>
 					</Col>

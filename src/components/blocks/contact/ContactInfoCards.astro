@@ -1,21 +1,10 @@
 ---
-// Contact Info Cards
-// ------------
-// Description: A contact info cards section with a title
-// Properties:
-// - title: The title of the contact info cards section
-
-// Components
-// - Layout
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-// - UI
 import ActionCard from '../../ui/cards/ActionCard.astro'
 import DecorationBorder from '../../ui/DecorationBorder.astro'
 
-// Content
-// - Props
 type Props = {
 	title?: string
 }
@@ -36,26 +25,29 @@ const { title = '' } = Astro.props
 <Section>
 	<Row decorationBorder="top left right bottom" gapY="0" style="transparent">
 		<Col span="4" style="transparent">
-			<ActionCard title="Support" link="mailto:support@mizu.com" linkText="Contact Support">
+			<ActionCard title="Event Location" link="https://www.pccoepune.com/" linkText="Open Campus Location">
 				<p>
-					Our support team is here to help you troubleshoot issues, answer questions, and make sure
-					your launch experience runs smoothly.
+					Pimpri Chinchwad College of Engineering (PCCoE), Sector 26, Pradhikaran, Nigdi,
+					Pune - 411044, Maharashtra, India.
 				</p>
 			</ActionCard>
 		</Col>
 		<Col span="4" style="transparent">
-			<ActionCard title="Sales" link="mailto:sales@mizu.com" linkText="Connect with Sales">
+			<ActionCard title="Contact" link="mailto:ieee.summerschool@pccoepune.com" linkText="Email Organising Team">
 				<p>
-					Curious about pricing, plans, or enterprise solutions? Our sales team will help you find
-					the best fit for your launch.
+					Email: ieee.summerschool@pccoepune.com<br />
+					Phone: +91 [IEEE Branch Contact Number]<br />
+					Event Dates: [Start Date] - [End Date], [Year]<br />
+					Registration Deadline: [Deadline Date]
 				</p>
 			</ActionCard>
 		</Col>
 		<Col span="4" style="transparent">
-			<ActionCard title="Requests" link="mailto:requests@mizu.com" linkText="Submit Request">
+			<ActionCard title="Follow Us" link="https://instagram.com/pccoe_ieee" linkText="Instagram @pccoe_ieee">
 				<p>
-					Looking for a custom feature, partnership, or something outside the box? Let’s explore how
-					we can launch it together.
+					LinkedIn: PCCoE IEEE Student Branch<br />
+					GitHub: github.com/pccoe-ieee<br />
+					For registration, domain, and fee concession queries, write to us anytime.
 				</p>
 			</ActionCard>
 		</Col>

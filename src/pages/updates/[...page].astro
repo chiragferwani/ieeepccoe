@@ -1,16 +1,7 @@
 ---
-// Blog Page
-// ------------
-// Description: The blog page is a page that displays all the blog posts.
-
-// Components
-// - Layout
 import Layout from '../../layouts/Layout.astro'
-// - Blocks
 import Hero from '../../components/blocks/hero/SimpleHeroBasic.astro'
 import PostCards from '../../components/blocks/blog/PostCards.astro'
-
-// - Collection
 import { getCollection } from 'astro:content'
 
 export async function getStaticPaths({ paginate }: any) {
@@ -19,15 +10,12 @@ export async function getStaticPaths({ paginate }: any) {
 }
 const { page } = Astro.props as any
 
-// Content
-// - SEO
 const SEO = {
-	title: 'Mizu Light Astro Theme | Blog',
+	title: 'PCCoE IEEE Summer School | Updates & Gallery',
 	description:
-		'Read the latest articles, tips, and insights on building fast, modern Astro websites with Mizu Light. Stay inspired and learn from our design and development guides.'
+		'Latest announcements, speaker reveals, and gallery highlights from PCCoE IEEE Summer School.'
 }
 
-// Sort blog posts by publication date (newest first)
 const sortedBlogPosts = page.data.sort((a: any, b: any) => {
 	return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 })
@@ -35,9 +23,9 @@ const sortedBlogPosts = page.data.sort((a: any, b: any) => {
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero
-		subtitle="Insights & Ideas"
-		title="Fresh perspectives from the team"
-		text="Stay up to date with the latest articles, resources, and practical tips. Our blog covers design, technology, and everything in between."
+		subtitle="Latest from the Summer School"
+		title="Updates & Announcements"
+		text="Track key announcements, speaker updates, and event highlights from the PCCoE IEEE Summer School edition."
 	/>
 	<PostCards data={sortedBlogPosts} />
 </Layout>

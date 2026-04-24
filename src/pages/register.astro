@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/SimpleHeroBasic.astro'
+import BasicTable from '../components/blocks/pricing/BasicTable.astro'
+import Brand from '../components/blocks/brand/Marquee.astro'
+import Faq from '../components/blocks/faq/StickyFaq.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+const SEO = {
+	title: 'PCCoE IEEE Summer School | Registration & Fees',
+	description:
+		'Choose your registration category and apply through the official Google Form for PCCoE IEEE Summer School.'
+}
+
+const heroData = {
+	title: 'Register for the Summer School',
+	subtitle: 'Registration Categories',
+	text: 'Choose your category below. All registrations go through the official Google Form. Fee payment instructions will be shared upon shortlisting. Seats are allocated on a first-come, first-served basis per batch.'
+}
+
+const brandData = {
+	title: 'Supported & Recognized By'
+}
+
+const faqData = {
+	title: 'Registration FAQs',
+	subtitle: 'Everything you need to know'
+}
+
+const registerFaqItems = [
+	{
+		question: 'How do I register?',
+		answer:
+			'Click the "Apply via Google Form" button above. Fill in your details, domain preference, and payment info. You will receive a confirmation email within [X] working days.'
+	},
+	{
+		question: 'What payment methods are accepted?',
+		answer:
+			'Payment can be made via UPI, NEFT, or cash at the college office. Payment instructions will be provided in the confirmation email. Do not make payment before receiving confirmation.'
+	},
+	{
+		question: 'Is there a group or institutional discount?',
+		answer:
+			'Groups of 5 or more from the same college may be eligible for a group concession. Reach out to us via the Contact page with your institution details.'
+	},
+	{
+		question: 'What is the cancellation and refund policy?',
+		answer:
+			'Cancellations made [X days] before the start date are eligible for a [X]% refund. No refund is issued after the cutoff. See the Terms page for full details.'
+	},
+	{
+		question: 'Can I switch my domain after registering?',
+		answer:
+			'Domain switching is possible before the final confirmation date, subject to seat availability. Email us to request a change.'
+	},
+	{
+		question: 'What do I need to bring on Day 1?',
+		answer:
+			'Bring your confirmation email (printed or digital), a valid student or government ID, a personal laptop (minimum 8GB RAM recommended for lab sessions), and any pre-reads shared in your confirmation email.'
+	}
+]
+
+const ctaData = {
+	title: 'Ready to Join? Apply Before Seats Fill Up.',
+	text: 'Registrations close on [Deadline Date]. Each domain has limited seats per batch. Once confirmed, your spot is reserved.',
+	buttonLink: 'https://forms.gle/your-google-form-link',
+	buttonText: 'Apply Now →'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<BasicTable />
+	<Brand title={brandData.title} />
+	<Faq subtitle={faqData.subtitle} title={faqData.title} items={registerFaqItems} />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

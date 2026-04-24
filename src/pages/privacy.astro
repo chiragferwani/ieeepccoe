@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/SimpleHeroNeutral.astro'
+
+const SEO = {
+	title: 'PCCoE IEEE Summer School | Privacy Policy',
+	description: 'Privacy policy for participant information submitted through registration and communication channels.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="Privacy Policy"
+		subtitle="Data & Communication"
+		text="Participant data submitted via the registration process is used only for event administration, communication, and certification workflow. Data is not sold and is handled under institutional policy."
+	/>
+</Layout>

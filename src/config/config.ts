@@ -1,7 +1,3 @@
-// Config
-// ------------
-// Description: The configuration file for the website.
-
 export interface Logo {
 	src: string
 	srcDark: string
@@ -22,18 +18,17 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle:
-		'Mizu Light Astro Theme | Modern SaaS & Startup Landing Page Template for Fast Product Launches by Oxygenna',
+	siteTitle: 'PCCoE IEEE Summer School | Official Website',
 	siteDescription:
-		'Launch your next big idea with Mizu Light — a sleek, responsive Astro theme built for SaaS startups and tech companies. Streamline onboarding, showcase features beautifully, and convert visitors into users faster.',
+		'PCCoE IEEE Summer School by IEEE PCCoE Student Branch. Explore technical domains, register by category, and stay updated with event announcements.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo-light.svg',
-		srcDark: '/logo-dark.svg',
-		alt: 'Mizu Light logo'
+		src: '/favicon.svg',
+		srcDark: '/favicon.svg',
+		alt: 'PCCoE IEEE Summer School logo'
 	},
 	canonical: true,
 	noindex: false,
-	mode: 'auto',
+	mode: 'light',
 	scrollAnimations: true
 }

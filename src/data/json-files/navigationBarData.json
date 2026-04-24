@@ -1,25 +1,26 @@
 {
 	"logo": {
-		"src": "/logo-light.svg",
-		"srcDark": "/logo-dark.svg",
-		"alt": "Tailwind Astro Theme"
+		"src": "/favicon.svg",
+		"srcDark": "/favicon.svg",
+		"alt": "PCCoE IEEE Summer School logo",
+		"text": "PCCoE IEEE Summer School"
 	},
 	"navItems": [
 		{ "name": "Home", "link": "/" },
-		{ "name": "Pricing", "link": "/pricing" },
-		{ "name": "Features", "link": "/features" },
+		{ "name": "Register", "link": "/register" },
+		{ "name": "Programmes", "link": "/programmes" },
 		{
-			"name": "Pages",
+			"name": "More",
 			"link": "#",
 			"align": "center",
 			"submenu": [
-				{ "name": "Blog", "link": "/blog" },
-				{ "name": "Single Post", "link": "/blog/small-teams-can-streamline" },
+				{ "name": "Updates", "link": "/updates" },
+				{ "name": "Single Post", "link": "/updates/applications-are-now-open-summer-school-2025" },
 				{ "name": "Contact", "link": "/contact" },
 				{ "name": "Terms", "link": "/terms" },
 				{ "name": "404", "link": "/404" }
 			]
 		}
 	],
-	"navActions": [{ "name": "Try it for free!", "link": "/contact" }]
+	"navActions": [{ "name": "Apply Now →", "link": "/register" }]
 }

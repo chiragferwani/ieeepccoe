@@ -1,74 +1,74 @@
 {
-	"currency": "USD",
-	"billing_toggle": ["annually", "monthly"],
-	"note": "No hidden fees, cancel anytime.",
+	"currency": "INR",
+	"billing_toggle": ["member", "nonmember"],
+	"note": "Seats are limited and allocated per batch.",
 	"plans": [
 		{
 			"id": "starter",
-			"name": "Starter",
-			"tagline": "Get started with the essentials",
+			"name": "Student (IEEE Member)",
+			"tagline": "For IEEE Student Members of any branch",
 			"prices": {
-				"annually": 19,
-				"monthly": 24
+				"annually": 299,
+				"monthly": 499
 			},
 			"prices_notes": {
-				"annually": "/month, billed annually",
-				"monthly": "/month, billed monthly"
+				"annually": "/person, one-time",
+				"monthly": "/person, one-time"
 			},
-			"cta": { "label": "View All Features", "href": "/signup?plan=starter" },
+			"cta": { "label": "Apply via Google Form →", "href": "https://forms.gle/your-google-form-link" },
 			"features": [
-				"Up to 3 active projects",
-				"Basic integrations (Slack, Google Drive, Dropbox)",
-				"Email support during business hours",
-				"10GB secure storage",
-				"Simple task management tools",
-				"Community access & knowledge base"
+				"Access to all sessions in chosen domain",
+				"Hands-on lab material & resources",
+				"Certificate of participation (on qualifying)",
+				"Lunch & refreshments on all days",
+				"IEEE Student Member concession applied",
+				"Access to IEEE community events"
 			]
 		},
 		{
 			"id": "basic",
-			"name": "Basic",
-			"tagline": "Power and flexibility for growing teams",
+			"name": "Student (Non-IEEE Member)",
+			"tagline": "For all B.E./B.Tech students",
 			"prices": {
-				"annually": 29,
-				"monthly": 35
+				"annually": 499,
+				"monthly": 499
 			},
 			"prices_notes": {
-				"annually": "/month, billed annually",
-				"monthly": "/month, billed monthly"
+				"annually": "/person, one-time",
+				"monthly": "/person, one-time"
 			},
-			"cta": { "label": "View All Features", "href": "/signup?plan=starter" },
+			"cta": { "label": "Apply via Google Form →", "href": "https://forms.gle/your-google-form-link" },
 			"tag": "Most Popular",
 			"featured": true,
 			"features": [
-				"Unlimited projects and team members",
-				"All integrations (CRM, analytics, communication tools)",
-				"Priority chat & email support",
-				"20GB secure storage",
-				"Custom branding & white-label options",
-				"Advanced reporting and dashboards"
+				"Access to all sessions in chosen domain",
+				"Hands-on lab material & resources",
+				"Certificate of participation (on qualifying)",
+				"Lunch & refreshments on all days",
+				"Option to join IEEE at discounted rate during registration",
+				"Networking with IEEE community"
 			]
 		},
 		{
 			"id": "pro",
-			"name": "Pro",
-			"tagline": "Tailored solutions for large organizations",
+			"name": "Industry / Faculty Participant",
+			"tagline": "For working professionals and faculty",
 			"prices": {
-				"annually": 49,
-				"monthly": 55
+				"annually": 999,
+				"monthly": 999
 			},
 			"prices_notes": {
-				"annually": "/month, billed annually",
-				"monthly": "/month, billed monthly"
+				"annually": "/person, one-time",
+				"monthly": "/person, one-time"
 			},
-			"cta": { "label": "View All Features", "href": "/signup?plan=starter" },
+			"cta": { "label": "Apply via Google Form →", "href": "https://forms.gle/your-google-form-link" },
 			"features": [
-				"Everything in basic",
-				"Dedicated success manager",
-				"Priority chat & email support",
-				"Unlimited secure storage",
-				"Custom data residency options (EU/US, APAC)",
-				"Governance, risk & compliance tools"
+				"Full access to chosen domain sessions",
+				"All lab materials and toolkit",
+				"Certificate of participation",
+				"Lunch & refreshments on all days",
+				"Industry networking sessions",
+				"Priority seating and speaker interaction"
 			]
 		}
 	]

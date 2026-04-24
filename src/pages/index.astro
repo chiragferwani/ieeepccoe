@@ -1,13 +1,5 @@
 ---
-// Home Page
-// ------------
-// Description: The home page is a page that displays the most important information.
-
-// Components
-// - Layout
 import Layout from '../layouts/Layout.astro'
-
-// - Blocks
 import Hero from '../components/blocks/hero/CenteredHeroCTA.astro'
 import Brand from '../components/blocks/brand/Marquee.astro'
 import Features from '../components/blocks/features/MasonryGrid.astro'
@@ -15,43 +7,42 @@ import ScrollSpySteps from '../components/blocks/onboarding/Steps.astro'
 import TestimonialMasonry from '../components/blocks/testimonials/TestimonialMasonry.astro'
 import Faq from '../components/blocks/faq/StickyFaq.astro'
 import CTA from '../components/blocks/cta/CTAPrimary.astro'
+import heroBanner from '../assets/hero/macbook.webp'
 
-// Content
-// - SEO
 const SEO = {
-	title:
-		'Mizu Light Astro Theme | Modern SaaS & Startup Landing Page Template for Fast Product Launches by Oxygenna',
+	title: 'PCCoE IEEE Summer School | Home',
 	description:
-		'Launch your next big idea with Mizu Light — a sleek, responsive Astro theme built for SaaS startups and tech companies. Streamline onboarding, showcase features beautifully, and convert visitors into users faster.'
+		'A Multi-Day Intensive Summer School by PCCoE IEEE Student Branch with expert-led sessions, hands-on labs, and domain deep-dives at PCCoE, Pune.'
 }
-// - Hero data
+
 const heroData = {
-	title: 'Launch smarter Start faster',
-	subtitle: 'build for the future',
-	buttonLink: '/pricing',
-	buttonText: 'Try it for free!',
-	text: 'Let AI handle the heavy lifting — from data insights to launch strategies — so you can focus on creating products that customers love'
+	title: 'Learn Deeper. Build Faster.',
+	subtitle: 'A Multi-Day Intensive Summer School by PCCoE IEEE Student Branch',
+	text: 'Join engineers, researchers, and innovators for hands-on sessions, expert talks, and domain deep-dives - all under one roof at Pimpri Chinchwad College of Engineering, Pune.',
+	buttonLink: '/register',
+	buttonText: 'Apply Now →',
+	image: heroBanner
 }
-// - Brand data
+
 const brandData = {
-	title: 'Built in collaboration with'
+	title: 'Supported & Recognized By'
 }
-// - Testimonial data
+
 const testimonialData = {
-	title: 'Loved by early adopters everywhere',
-	subtitle: 'What other are saying'
+	title: 'What Past Participants Say',
+	subtitle: 'Student & Faculty Voices'
 }
-// - FAQ data
+
 const faqData = {
 	title: 'Frequently Asked Questions',
-	subtitle: 'Everything you need to know'
+	subtitle: 'Everything you need to know about the Summer School'
 }
-// - CTA data
+
 const ctaData = {
-	title: 'Launch your next big idea today',
-	text: 'Join creators, teams, and startups already turning their ideas into reality. Get started in minutes and see how simple launching can be when everything works together seamlessly.',
-	buttonLink: '/pricing',
-	buttonText: 'Try it for free!'
+	title: 'Secure Your Spot at PCCoE IEEE Summer School',
+	text: "Limited seats per batch. Applications are reviewed on a rolling basis - the sooner you apply, the better your chances of getting your preferred domain. Don't miss this chance to learn, build, and connect.",
+	buttonLink: '/register',
+	buttonText: 'Apply Now →'
 }
 ---
 
@@ -59,8 +50,10 @@ const ctaData = {
 	<Hero
 		title={heroData.title}
 		subtitle={heroData.subtitle}
+		text={heroData.text}
 		buttonLink={heroData.buttonLink}
 		buttonText={heroData.buttonText}
+		image={heroData.image}
 	/>
 	<Brand title={brandData.title} />
 	<Features />

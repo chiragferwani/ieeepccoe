@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/SimpleHeroPrimary.astro'
+import BasicFeatures from '../components/blocks/features/StickyBasicFeatures.astro'
+import CTA from '../components/blocks/cta/CTAPrimary.astro'
+
+const SEO = {
+	title: 'PCCoE IEEE Summer School | Programmes & Domains',
+	description:
+		'Explore our technical programme tracks with curated hands-on sessions led by faculty and industry experts.'
+}
+
+const heroData = {
+	title: 'Explore Our Technical Domains',
+	subtitle: 'Programme Tracks',
+	text: 'Choose from a curated set of hands-on technical domains, each led by experienced faculty and industry experts. Each track is designed to balance theory with application.'
+}
+
+const ctaData = {
+	title: 'Choose Your Track and Start Building',
+	text: 'Each domain runs as an independent batch. Seats are limited. Select your preferred domain during registration.',
+	buttonLink: '/register',
+	buttonText: 'Register Now →'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={heroData.title} subtitle={heroData.subtitle} text={heroData.text} />
+	<BasicFeatures />
+	<CTA
+		title={ctaData.title}
+		text={ctaData.text}
+		buttonLink={ctaData.buttonLink}
+		buttonText={ctaData.buttonText}
+	/>
+</Layout>

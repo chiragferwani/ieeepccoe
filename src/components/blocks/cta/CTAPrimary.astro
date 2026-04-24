@@ -28,8 +28,8 @@ type Props = {
 const {
 	title = 'Launch your next big idea today',
 	text = 'Join creators, teams, and startups already turning their ideas into reality. Get started in minutes and see how simple launching can be when everything works together seamlessly.',
-	buttonText = 'Try it for free!',
-	buttonLink = '/pricing'
+	buttonText = 'Apply Now →',
+	buttonLink = '/register'
 } = Astro.props
 ---
 
@@ -74,7 +74,7 @@ const {
 		@apply absolute inset-0 z-0 bg-[url('/bgs/dot-gray-light.svg')] bg-size-[18px] bg-fixed opacity-50;
 	}
 	.cta__bg-color {
-		@apply absolute inset-0 z-0 bg-linear-[135deg,#F97316_0%,#EA580C_35%,#F97316_70%,#F46F16_100%];
+		@apply absolute inset-0 z-0 bg-primary-700;
 	}
 	.cta__bg-circles {
 		@apply pointer-events-none absolute inset-0 z-[1] overflow-visible;

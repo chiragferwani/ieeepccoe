@@ -1,14 +1,7 @@
 ---
-// Blog Post Page
-// ------------
-// Description: The blog post page is a page that displays a single blog post.
-
-// Components
-// - Layout
 import Layout from '../../layouts/BlogLayout.astro'
-
-// Data
 import { getCollection, render } from 'astro:content'
+
 export async function getStaticPaths() {
 	const workProjects = await getCollection('blog')
 	return workProjects.map((entry) => {
@@ -19,6 +12,7 @@ export async function getStaticPaths() {
 		}
 	})
 }
+
 const { entry } = Astro.props
 const { Content } = await render(entry)
 ---
