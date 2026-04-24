@@ -18,9 +18,9 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'PCCoE IEEE Summer School | Official Website',
+	siteTitle: 'PCCOE Summer School',
 	siteDescription:
-		'PCCoE IEEE Summer School by IEEE PCCoE Student Branch. Explore technical domains, register by category, and stay updated with event announcements.',
+		'Official PCCOE IEEE Summer School. Join expert-led technical domains, participate in hands-on learning, and earn prestigious certification at PCCOE Student Branch.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/favicon.svg',

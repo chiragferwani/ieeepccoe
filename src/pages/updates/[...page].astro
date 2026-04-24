@@ -11,9 +11,9 @@ export async function getStaticPaths({ paginate }: any) {
 const { page } = Astro.props as any
 
 const SEO = {
-	title: 'PCCoE IEEE Summer School | Updates & Gallery',
+	title: 'Updates & Announcements | PCCOE Summer School',
 	description:
-		'Latest announcements, speaker reveals, and gallery highlights from PCCoE IEEE Summer School.'
+		'Stay informed with the latest announcements, speaker reveals, and gallery highlights from the PCCOE Summer School.'
 }
 
 const sortedBlogPosts = page.data.sort((a: any, b: any) => {
