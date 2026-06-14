@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { CheckCircle2 } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
+import Image from 'next/image'
 
 export default function Home() {
   const outcomes = [
@@ -100,27 +101,42 @@ export default function Home() {
                 name: 'Dr. Debmalya Biswas',
                 role: 'Executive Director, UBS Switzerland',
                 topic: 'Privacy & Security in LLM Systems',
+                image: '/speakers/debmalyabiswas.jpeg',
               },
               {
                 name: 'Dr. Aniruddha Joshi',
                 role: 'Founder & CEO, Atreya Innovations',
                 topic: 'AI in Healthcare & Diagnostics',
+                image: '/speakers/aniruddhajoshi.jpeg',
               },
               {
                 name: 'Dr. Pratap Sanap',
                 role: 'Head R&I, Neilsoft Pune',
                 topic: 'Deploying LLMs at Scale',
+                image: '/speakers/pratapsanap.png',
               },
             ].map((speaker, idx) => (
               <Card 
                 key={idx} 
-                className="p-6 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="p-6 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between items-center text-center"
                 style={{ animation: `fadeInUp 0.6s ease-out ${0.1 * idx}s both` }}
               >
-                <div className="w-full h-40 bg-gradient-to-br from-violet-200 to-blue-200 rounded-lg mb-4"></div>
-                <h3 className="font-bold text-foreground mb-1">{speaker.name}</h3>
-                <p className="text-sm text-muted-foreground mb-2">{speaker.role}</p>
-                <p className="text-sm font-medium text-primary">{speaker.topic}</p>
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-violet-200 to-blue-200 rounded-full mb-4 overflow-hidden relative border border-border/40 shadow-sm flex-shrink-0 mx-auto">
+                    {speaker.image && (
+                      <Image
+                        src={speaker.image}
+                        alt={speaker.name}
+                        fill
+                        sizes="80px"
+                        className="object-cover object-center transition-transform duration-500 hover:scale-105"
+                      />
+                    )}
+                  </div>
+                  <h3 className="font-bold text-foreground mb-1">{speaker.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{speaker.role}</p>
+                </div>
+                <p className="text-sm font-semibold text-primary border-t border-border/40 pt-3 mt-2 w-full text-center">{speaker.topic}</p>
               </Card>
             ))}
           </div>
