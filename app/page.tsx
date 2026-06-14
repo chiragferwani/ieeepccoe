@@ -9,6 +9,9 @@ import { Card } from '@/components/ui/card'
 import { CheckCircle2 } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
 import Image from 'next/image'
+import { SpotlightTicker } from '@/components/sections/SpotlightTicker'
+import { ImageSlider } from '@/components/sections/ImageSlider'
+import { LoaderScreen } from '@/components/sections/LoaderScreen'
 
 export default function Home() {
   const outcomes = [
@@ -37,7 +40,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <LoaderScreen />
       <Navbar />
+      <SpotlightTicker />
+      <ImageSlider />
 
       {/* Hero Section */}
       <HeroSection />
@@ -46,7 +52,10 @@ export default function Home() {
       <StatsSection />
 
       {/* Why Attend Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+        {/* Decorative background blur shapes for glassmorphism highlights */}
+        <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-violet-200/20 dark:bg-violet-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+        <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-sky-200/20 dark:bg-sky-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">Why Attend?</h2>
           <p className="text-center text-lg text-muted-foreground mb-12">
@@ -62,7 +71,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="bg-muted rounded-lg p-8 border border-border text-center">
+          <div className="bg-muted/40 dark:bg-muted/10 backdrop-blur-md border border-white/20 dark:border-white/5 rounded-2xl p-8 shadow-lg text-center">
             <p className="text-lg text-foreground mb-4 font-semibold">
               June 22-27, 2026 | Pune, India
             </p>

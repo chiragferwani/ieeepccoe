@@ -5,13 +5,27 @@ import { Arrow } from '@/components/ui/arrow'
 
 export function HeroSection() {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
+      {/* Decorative background blur shapes for glassmorphism highlights */}
+      <div className="absolute top-1/4 left-10 w-72 h-72 bg-violet-200/20 dark:bg-violet-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-sky-200/20 dark:bg-sky-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+
       <div className="max-w-4xl mx-auto text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border mb-6 animate-fadeInDown">
           <span className="text-sm font-medium text-foreground">June 22-27, 2026</span>
           <span className="inline-block w-1 h-1 bg-primary rounded-full animate-pulse-subtle"></span>
           <span className="text-sm text-muted-foreground">Pune, India</span>
+        </div>
+
+        {/* Organizer Eyebrow */}
+        <div className="mb-4 animate-fadeInUp" style={{ animationDelay: '0.05s' }}>
+          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-primary/10 text-primary px-3 py-1.5 rounded-full border border-primary/20">
+            PCCoE Organizes
+          </span>
+          <span className="block text-sm sm:text-base font-semibold uppercase tracking-wider text-muted-foreground mt-3">
+            IEEE Computational Intelligence Society Summer School 2026
+          </span>
         </div>
 
         {/* Main Heading */}
@@ -45,7 +59,7 @@ export function HeroSection() {
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
             Organized & Supported By
           </p>
-          <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-muted/40 py-6 px-8 rounded-xl border border-border/60 max-w-4xl mx-auto overflow-x-auto no-scrollbar">
+          <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-white/30 dark:border-white/5 py-6 px-8 rounded-xl shadow-md max-w-4xl mx-auto overflow-x-auto no-scrollbar">
             <div className="relative h-20 w-56 flex-shrink-0">
               <Image
                 src="/ieeecis.png"
