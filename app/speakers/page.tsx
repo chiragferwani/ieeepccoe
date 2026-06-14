@@ -2,6 +2,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { SpeakerCard } from '@/components/cards/SpeakerCard'
 import { plenaryPresenters, instructors } from '@/data/speakers'
+import { Arrow } from '@/components/ui/arrow'
 
 export default function SpeakersPage() {
   return (
@@ -59,9 +60,9 @@ export default function SpeakersPage() {
           </p>
           <a
             href="/register"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
           >
-            Register Now →
+            Register Now <Arrow size={18} />
           </a>
         </div>
       </section>

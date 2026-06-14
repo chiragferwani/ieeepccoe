@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { RegistrationCard } from '@/components/cards/RegistrationCard'
 import { registrationTiers, registrationBenefits } from '@/data/registration'
 import { Card } from '@/components/ui/card'
+import { Arrow } from '@/components/ui/arrow'
 
 export default function RegisterPage() {
   const [mode, setMode] = useState<'online' | 'offline'>('offline')
@@ -71,8 +72,8 @@ export default function RegisterPage() {
             <p className="text-foreground mb-4">
               We offer special pricing for groups of 5 or more participants. Contact us for a customized quote.
             </p>
-            <a href="mailto:pallavi.dhade@pccoepune.org" className="inline-block text-primary font-semibold hover:underline">
-              Email us for group rates →
+            <a href="mailto:pallavi.dhade@pccoepune.org" className="group inline-flex items-center gap-1.5 text-primary font-semibold hover:underline">
+              Email us for group rates <Arrow size={16} />
             </a>
           </div>
         </div>
@@ -159,24 +160,8 @@ export default function RegisterPage() {
                 {idx < arr.length - 1 && (
                   <div className="flex items-center justify-center text-primary/60 py-2 md:py-0 md:px-2">
                     {/* Arrow pointing down on mobile, pointing right on desktop */}
-                    <svg
-                      className="w-5 h-5 hidden md:block animate-bounce-right"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                    <svg
-                      className="w-5 h-5 block md:hidden animate-bounce-down"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
+                    <Arrow variant="flow-right" size={20} className="hidden md:block" />
+                    <Arrow variant="flow-down" size={20} className="block md:hidden" />
                   </div>
                 )}
               </div>
@@ -247,9 +232,9 @@ export default function RegisterPage() {
                 </p>
                 <a
                   href="mailto:pallavi.dhade@pccoepune.org"
-                  className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+                  className="group text-primary hover:underline font-medium inline-flex items-center gap-1.5"
                 >
-                  pallavi.dhade@pccoepune.org &rarr;
+                  pallavi.dhade@pccoepune.org <Arrow size={14} />
                 </a>
               </div>
               <button

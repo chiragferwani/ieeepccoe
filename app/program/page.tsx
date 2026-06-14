@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
+import { Arrow } from '@/components/ui/arrow'
 
 export default function ProgramPage() {
   return (
@@ -23,38 +24,38 @@ export default function ProgramPage() {
           <div className="bg-muted rounded-lg p-8 border border-border mb-16">
             <h2 className="text-2xl font-bold text-foreground mb-4">Program Highlights</h2>
             <ul className="space-y-3 text-foreground">
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>40+ hours</strong> of intensive instruction combining theory and practice
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>6 expert plenary speakers</strong> presenting the latest developments in CI
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>Hands-on labs</strong> with Python, TensorFlow, PyTorch, and scikit-learn
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>Group projects</strong> with mentorship from experienced instructors
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>Networking opportunities</strong> with peers, instructors, and industry leaders
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-primary font-bold">→</span>
+              <li className="flex gap-3 group">
+                <Arrow variant="bullet" className="text-primary mt-1" size={16} />
                 <span>
                   <strong>Official IEEE CIS certificate</strong> upon successful completion
                 </span>

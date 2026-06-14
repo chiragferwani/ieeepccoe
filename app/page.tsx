@@ -6,7 +6,8 @@ import { HighlightGrid } from '@/components/sections/HighlightGrid'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
+import { Arrow } from '@/components/ui/arrow'
 
 export default function Home() {
   const outcomes = [
@@ -69,9 +70,9 @@ export default function Home() {
             </p>
             <Link
               href="/register"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
             >
-              Register Now <ArrowRight size={18} />
+              Register Now <Arrow size={18} />
             </Link>
           </div>
         </div>
@@ -127,9 +128,9 @@ export default function Home() {
           <div className="text-center">
             <Link
               href="/speakers"
-              className="inline-flex items-center gap-2 px-6 py-2 text-primary font-semibold hover:gap-3 transition-all"
+              className="group inline-flex items-center gap-2 px-6 py-2 text-primary font-semibold transition-all"
             >
-              View All Speakers <ArrowRight size={18} />
+              View All Speakers <Arrow size={18} />
             </Link>
           </div>
         </div>
@@ -177,9 +178,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/register"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
             >
-              Register Now <ArrowRight size={18} />
+              Register Now <Arrow size={18} />
             </Link>
             <Link
               href="/contact"

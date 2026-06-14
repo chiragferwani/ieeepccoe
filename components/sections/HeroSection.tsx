@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Calendar, MapPin } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
+import { Arrow } from '@/components/ui/arrow'
 
 export function HeroSection() {
   return (
@@ -27,9 +28,9 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
           <Link
             href="/register"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
           >
-            Register Now <ArrowRight size={18} />
+            Register Now <Arrow size={18} />
           </Link>
           <Link
             href="/program"
