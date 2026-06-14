@@ -1,7 +1,20 @@
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'About PCCOE Summer School 2026',
+  description:
+    'Discover the PCCOE Summer School 2026 — an intensive IEEE CIS program designed for students, researchers, and professionals seeking to master Fine-Tuning LLMs and Inference Optimization at PCCoE Pune.',
+  alternates: { canonical: 'https://pccoesummerschool.vercel.app/about' },
+  openGraph: {
+    title: 'About PCCOE Summer School 2026',
+    description: 'Learn why the PCCOE Summer School is the premier AI residential program in India. World-class instructors, hands-on labs, IEEE CIS certificate.',
+    url: 'https://pccoesummerschool.vercel.app/about',
+  },
+}
 
 export default function AboutPage() {
   return (

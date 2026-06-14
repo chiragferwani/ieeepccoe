@@ -1,7 +1,20 @@
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import { MapPin, Plane, Hotel, Utensils } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Venue & Travel — PCCOE Summer School 2026',
+  description:
+    'PCCOE Summer School 2026 is held at Pimpri Chinchwad College of Engineering, Sector 26, Pradhikaran, Nigdi, Pune 411044, Maharashtra, India. Travel, accommodation, and local info.',
+  alternates: { canonical: 'https://pccoesummerschool.vercel.app/venue' },
+  openGraph: {
+    title: 'Venue & Travel — PCCOE Summer School 2026',
+    description: 'Located at PCCoE Pune — GPU-enabled labs, world-class facilities. Directions, accommodation, and Pune travel guide for participants.',
+    url: 'https://pccoesummerschool.vercel.app/venue',
+  },
+}
 
 export default function VenuePage() {
   return (

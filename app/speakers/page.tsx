@@ -1,8 +1,21 @@
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { SpeakerCard } from '@/components/cards/SpeakerCard'
 import { plenaryPresenters, instructors } from '@/data/speakers'
 import { Arrow } from '@/components/ui/arrow'
+
+export const metadata: Metadata = {
+  title: 'Speakers & Instructors — PCCOE Summer School 2026',
+  description:
+    'Meet the world-class researchers and industry experts speaking at PCCOE Summer School 2026. Leaders from IEEE, UBS Switzerland, Neilsoft, Atreya Innovations, and top academic institutions.',
+  alternates: { canonical: 'https://pccoesummerschool.vercel.app/speakers' },
+  openGraph: {
+    title: 'Speakers & Instructors — PCCOE Summer School 2026',
+    description: 'Learn from 10+ expert speakers from IEEE, industry, and academia at the PCCOE Summer School 2026 on LLM Fine-Tuning & Inference Optimization.',
+    url: 'https://pccoesummerschool.vercel.app/speakers',
+  },
+}
 
 export default function SpeakersPage() {
   return (

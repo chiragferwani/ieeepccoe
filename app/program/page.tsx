@@ -1,7 +1,20 @@
+import type { Metadata } from 'next'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
 import { Arrow } from '@/components/ui/arrow'
+
+export const metadata: Metadata = {
+  title: 'Program Schedule — PCCOE Summer School 2026',
+  description:
+    'Explore the 6-day program of the PCCOE Summer School 2026. From LLM fundamentals and LoRA/QLoRA fine-tuning to GPTQ quantization, vLLM serving, and capstone project deployment.',
+  alternates: { canonical: 'https://pccoesummerschool.vercel.app/program' },
+  openGraph: {
+    title: 'Program Schedule — PCCOE Summer School 2026',
+    description: '6-day curriculum covering LLM fine-tuning, quantization, deployment pipelines, and hands-on capstone projects at PCCoE Pune. June 22–27, 2026.',
+    url: 'https://pccoesummerschool.vercel.app/program',
+  },
+}
 
 export default function ProgramPage() {
   return (
