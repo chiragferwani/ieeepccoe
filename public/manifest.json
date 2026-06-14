@@ -9,8 +9,13 @@
   "lang": "en",
   "icons": [
     {
-      "src": "/icon-light-32x32.png",
+      "src": "/pccoeicon.png",
       "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/pccoeicon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
@@ -19,8 +24,8 @@
       "type": "image/png"
     },
     {
-      "src": "/apple-icon.png",
-      "sizes": "180x180",
+      "src": "/pccoeicon.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
