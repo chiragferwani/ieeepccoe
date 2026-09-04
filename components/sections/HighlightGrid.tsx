@@ -50,11 +50,12 @@ const highlights: Highlight[] = [
 
 export function HighlightGrid() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What You&apos;ll Learn</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className="eyebrow block mb-3">Core Modules</span>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-[#080808] tracking-tight mb-4">What You&apos;ll Learn</h2>
+          <p className="text-base sm:text-lg text-[#5a5a5a] max-w-2xl mx-auto font-normal">
             Comprehensive curriculum covering all major areas of computational intelligence with practical applications.
           </p>
         </div>
@@ -63,14 +64,14 @@ export function HighlightGrid() {
           {highlights.map((highlight, idx) => (
             <Card
               key={highlight.id}
-              className="p-6 hover:shadow-lg transition-all duration-300 border border-border hover:border-primary/30 cursor-default hover:-translate-y-1"
+              className="p-8 transition-all duration-200 border border-[#d8d8d8] bg-white rounded-[8px] hover:border-[#080808]/40 hover:shadow-layered cursor-default"
               style={{ animation: `fadeInUp 0.6s ease-out ${0.05 * idx}s both` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center text-primary mb-4">
+              <div className="w-12 h-12 rounded-[4px] bg-[#f5f5f5] flex items-center justify-center text-[#080808] mb-5 border border-[#d8d8d8]/60">
                 {highlight.icon}
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{highlight.title}</h3>
-              <p className="text-sm text-muted-foreground">{highlight.description}</p>
+              <h3 className="font-semibold text-[#080808] mb-2 text-lg">{highlight.title}</h3>
+              <p className="text-sm text-[#5a5a5a] leading-relaxed">{highlight.description}</p>
             </Card>
           ))}
         </div>

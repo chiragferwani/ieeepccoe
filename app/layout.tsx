@@ -1,14 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
 })
-const inter = Inter({ variable: '--font-inter', subsets: ['latin'] })
 
 const BASE_URL = 'https://ieeecissummerschool2026.vercel.app'
 
@@ -119,7 +119,7 @@ export const viewport: Viewport = {
   colorScheme: 'light',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: dark)', color: '#ffffff' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -197,7 +197,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} bg-background`}>
+    <html lang="en" className={`${inter.variable} bg-[#ffffff] text-[#080808]`}>
       <head>
         {/* JSON-LD Structured Data */}
         <script
@@ -209,7 +209,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://vercel-analytics.com" />
       </head>
-      <body className="font-sans antialiased text-foreground">
+      <body className="font-sans antialiased text-[#363636] bg-[#ffffff] selection:bg-[#080808] selection:text-[#ffffff]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

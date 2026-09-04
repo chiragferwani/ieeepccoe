@@ -29,56 +29,50 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-200 bg-white/95 backdrop-blur-md ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm'
-          : 'bg-transparent'
+          ? 'border-b border-[#d8d8d8] shadow-xs'
+          : 'border-b border-[#d8d8d8]/80'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo with enlarged prominent PCCoE icon */}
+        <div className="flex justify-between items-center h-18">
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 flex-shrink-0 rounded-xl overflow-hidden shadow-md border border-border/60 bg-white p-0.5 transition-transform group-hover:scale-105">
+            <div className="relative w-10 h-10 flex-shrink-0 rounded-[4px] overflow-hidden border border-[#d8d8d8] bg-white p-0.5 transition-transform group-hover:scale-105">
               <Image
                 src="/pccoe.jpeg"
                 alt="PCCoE Logo"
                 fill
-                sizes="48px"
+                sizes="40px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
+              <span className="text-sm sm:text-base font-semibold text-[#080808] leading-tight tracking-tight">
                 IEEE CIS Summer School
               </span>
-              <span className="text-[11px] font-medium text-muted-foreground hidden sm:inline">
+              <span className="text-[11px] font-normal text-[#5a5a5a] hidden sm:inline">
                 hosted by Dept. of CSE (AI &amp; ML), PCCOE
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/70 rounded-md transition-colors"
+                className="px-3 py-1.5 text-sm font-medium text-[#363636] hover:text-[#080808] hover:bg-[#f5f5f5] rounded-[4px] transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/admin"
-              className="px-3 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground border border-border/80 rounded-md transition-colors ml-1"
-            >
-              Admin Portal
-            </Link>
-            <Link
               href="/register"
-              className="ml-2 px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-all shadow-sm hover:shadow"
+              className="ml-3 px-4 py-2 bg-[#080808] text-white rounded-[4px] text-sm font-medium hover:bg-[#222222] transition-colors"
             >
               Register
             </Link>
@@ -87,36 +81,29 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden p-2 rounded-md text-foreground hover:bg-muted transition-colors"
+            className="md:hidden p-2 rounded-[4px] text-[#080808] hover:bg-[#f5f5f5] transition-colors border border-[#d8d8d8]"
             aria-label="Toggle Menu"
           >
-            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileOpen && (
-          <div className="md:hidden bg-background border-b border-border py-4 px-2 space-y-2">
+          <div className="md:hidden bg-white border-b border-[#d8d8d8] py-4 px-2 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                className="block px-3 py-2 text-sm font-medium text-[#363636] hover:text-[#080808] hover:bg-[#f5f5f5] rounded-[4px] transition-colors"
                 onClick={() => setIsMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/admin"
-              className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
-              onClick={() => setIsMobileOpen(false)}
-            >
-              Admin Portal
-            </Link>
-            <Link
               href="/register"
-              className="block w-full px-3 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium text-center hover:bg-primary/90 transition-colors mt-2"
+              className="block w-full px-4 py-2.5 bg-[#080808] text-white rounded-[4px] text-sm font-medium text-center hover:bg-[#222222] transition-colors mt-3"
               onClick={() => setIsMobileOpen(false)}
             >
               Register Now

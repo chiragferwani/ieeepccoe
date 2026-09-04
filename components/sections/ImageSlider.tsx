@@ -203,8 +203,8 @@ export function ImageSlider() {
         </div>
       </div>
 
-      {/* Caption Bar (Matches the College Site Design style in the reference image) */}
-      <div className="w-full bg-[#2a2a2a] dark:bg-[#1a1a1a] text-white py-3 px-4 text-center font-bold tracking-wide text-xs sm:text-sm uppercase select-none border-t border-white/5">
+      {/* Caption Bar */}
+      <div className="w-full bg-[#080808] text-white py-3 px-4 text-center font-medium tracking-[1.5px] text-xs uppercase select-none border-t border-[#d8d8d8]">
         {slides[currentSlide].caption}
       </div>
     </div>

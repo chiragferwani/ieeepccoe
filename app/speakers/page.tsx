@@ -58,56 +58,55 @@ export default function SpeakersPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-white text-[#5a5a5a] flex flex-col font-sans">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-[4px] bg-[#f5f5f5] text-[#080808] text-xs font-medium uppercase tracking-[1.5px] mb-6 border border-[#d8d8d8]">
             Distinguished Faculty &amp; Experts
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-[#080808] mb-6 leading-tight tracking-[-0.8px]">
             Plenary Presenters
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#5a5a5a] max-w-2xl mx-auto leading-relaxed">
             Renowned professors and industry experts will be presenting throughout the six-day intensive curriculum.
           </p>
         </div>
       </section>
 
       {/* Unified Plenary Presenters Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/40 border-y border-border">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fafafa] border-y border-[#d8d8d8]">
         <div className="max-w-5xl mx-auto">
           {/* Main Statement Banner */}
-          <div className="bg-background rounded-2xl p-8 sm:p-12 border border-border/80 shadow-md mb-16 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+          <div className="bg-white rounded-[8px] p-8 sm:p-12 border border-[#d8d8d8] shadow-sm mb-16 text-center">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#080808] mb-4">
               World-Class Faculty &amp; Industry Practitioners
             </h2>
-            <p className="text-lg text-foreground font-medium mb-6 max-w-3xl mx-auto">
+            <p className="text-lg text-[#080808] font-medium mb-6 max-w-3xl mx-auto">
               Renowned professors and industry experts will be presenting.
             </p>
-            <p className="text-muted-foreground text-base max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-[#5a5a5a] text-base max-w-3xl mx-auto leading-relaxed mb-8">
               The IEEE CIS Summer School features sessions led by IEEE Fellows, senior corporate directors, department heads, and pioneering researchers from leading universities and multinational enterprises. Participants will benefit from both rigorous theoretical foundations and direct production insights for fine-tuning and inference optimization.
             </p>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border/60 text-left">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-[#d8d8d8] text-left">
               <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-semibold text-foreground">20+ Distinguished Presenters</span>
+                <CheckCircle className="w-5 h-5 text-[#080808] flex-shrink-0" />
+                <span className="text-sm font-medium text-[#080808]">20+ Distinguished Presenters</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-semibold text-foreground">Top-Tier IITs &amp; Universities</span>
+                <CheckCircle className="w-5 h-5 text-[#080808] flex-shrink-0" />
+                <span className="text-sm font-medium text-[#080808]">Top-Tier IITs &amp; Universities</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-semibold text-foreground">Global Tech Enterprises</span>
+                <CheckCircle className="w-5 h-5 text-[#080808] flex-shrink-0" />
+                <span className="text-sm font-medium text-[#080808]">Global Tech Enterprises</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-semibold text-foreground">1-on-1 Mentor Clinics</span>
+                <CheckCircle className="w-5 h-5 text-[#080808] flex-shrink-0" />
+                <span className="text-sm font-medium text-[#080808]">1-on-1 Mentor Clinics</span>
               </div>
             </div>
           </div>
@@ -115,10 +114,10 @@ export default function SpeakersPage() {
           {/* Participating Institutions & Organizations */}
           <div className="mb-16">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#080808] mb-3">
                 Represented Institutions &amp; Industry Leaders
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-[#5a5a5a] max-w-2xl mx-auto">
                 Presenters bring perspectives from premier research laboratories, leading academic institutions, and global technology organizations.
               </p>
             </div>
@@ -127,15 +126,15 @@ export default function SpeakersPage() {
               {institutions.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-background p-5 rounded-xl border border-border/70 hover:border-primary/40 hover:shadow-md transition-all duration-300"
+                  className="bg-white p-5 rounded-[8px] border border-[#d8d8d8] hover:border-[#080808] hover:shadow-layered transition-all duration-200"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded">
+                    <span className="text-xs font-medium uppercase tracking-[1.5px] text-[#080808] bg-[#f5f5f5] px-2.5 py-1 rounded-[4px] border border-[#d8d8d8]">
                       {item.type}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-1">{item.name}</h3>
-                  <p className="text-xs text-muted-foreground">{item.focus}</p>
+                  <h3 className="text-lg font-semibold text-[#080808] mb-1">{item.name}</h3>
+                  <p className="text-xs text-[#5a5a5a]">{item.focus}</p>
                 </div>
               ))}
             </div>
@@ -144,10 +143,10 @@ export default function SpeakersPage() {
           {/* Session Formats */}
           <div>
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#080808] mb-3">
                 How Presenters Engage with Participants
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-[#5a5a5a] max-w-2xl mx-auto">
                 The six-day program is designed for active, direct interaction rather than passive listening.
               </p>
             </div>
@@ -156,13 +155,13 @@ export default function SpeakersPage() {
               {sessionFormats.map((format, idx) => {
                 const Icon = format.icon
                 return (
-                  <div key={idx} className="bg-background p-6 rounded-xl border border-border/70 flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 border border-primary/20">
+                  <div key={idx} className="bg-white p-6 rounded-[8px] border border-[#d8d8d8] flex gap-4 hover:border-[#080808] hover:shadow-layered transition-all">
+                    <div className="w-12 h-12 rounded-[4px] bg-[#f5f5f5] text-[#080808] flex items-center justify-center flex-shrink-0 border border-[#d8d8d8]">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground text-base mb-1">{format.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{format.description}</p>
+                      <h3 className="font-semibold text-[#080808] text-base mb-1">{format.title}</h3>
+                      <p className="text-sm text-[#5a5a5a] leading-relaxed">{format.description}</p>
                     </div>
                   </div>
                 )
@@ -173,22 +172,22 @@ export default function SpeakersPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Join the Summer School Cohort</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#080808] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4 tracking-[-0.8px]">Join the Summer School Cohort</h2>
+          <p className="text-lg text-[#888888] mb-8 leading-relaxed">
             Limited to 60 in-person participants and 100+ online attendees. Secure your seat today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/register"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors shadow-sm"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#080808] font-medium text-sm rounded-[4px] hover:bg-[#eaeaea] transition-all shadow-sm"
             >
-              Register Now <Arrow size={18} />
+              Register Now <Arrow size={16} />
             </Link>
             <Link
               href="/program"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-muted text-foreground font-semibold rounded-md hover:bg-muted/80 transition-colors border border-border"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-medium text-sm rounded-[4px] hover:bg-white/10 transition-all border border-white/30"
             >
               View Full Schedule
             </Link>

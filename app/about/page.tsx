@@ -18,64 +18,67 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-white text-[#5a5a5a] flex flex-col font-sans">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">About the Summer School</h1>
-          <p className="text-xl text-muted-foreground">
-            Intensive learning experience in computational intelligence from leading researchers worldwide
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-[4px] bg-[#f5f5f5] text-[#080808] text-xs font-medium uppercase tracking-[1.5px] mb-6 border border-[#d8d8d8]">
+            About the Program
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-semibold text-[#080808] mb-4 tracking-[-0.8px]">About the Summer School</h1>
+          <p className="text-lg sm:text-xl text-[#5a5a5a] leading-relaxed">
+            Intensive learning experience in computational intelligence and LLMs from leading researchers worldwide
           </p>
         </div>
       </section>
 
       {/* Partner Logos */}
-      <section className="py-8 bg-muted/20 border-b border-border/50">
+      <section className="py-8 bg-[#fafafa] border-y border-[#d8d8d8]">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+          <p className="text-xs font-medium uppercase tracking-[1.5px] text-[#888888] mb-4">
             Organized &amp; Supported By
           </p>
-          <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-background py-6 px-8 rounded-xl border border-border/60 max-w-4xl mx-auto overflow-x-auto no-scrollbar">
+          <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-white py-6 px-8 rounded-[8px] border border-[#d8d8d8] max-w-4xl mx-auto overflow-x-auto no-scrollbar shadow-sm">
             {/* 1. IEEE CIS */}
-            <div className="relative h-20 w-56 flex-shrink-0">
+            <div className="relative h-16 w-52 flex-shrink-0">
               <Image
                 src="/ieeecis.png"
                 alt="IEEE CIS Logo"
                 fill
-                sizes="(max-width: 768px) 224px, 224px"
+                sizes="(max-width: 768px) 208px, 208px"
                 className="object-contain"
               />
             </div>
             {/* 2. ARC */}
-            <div className="relative h-20 w-44 flex-shrink-0">
+            <div className="relative h-16 w-40 flex-shrink-0">
               <Image
                 src="/arc-logo.svg"
                 alt="ARC Logo"
                 fill
-                sizes="(max-width: 768px) 176px, 176px"
+                sizes="(max-width: 768px) 160px, 160px"
                 className="object-contain"
               />
             </div>
             {/* 3. IEEE Pune Section */}
-            <div className="relative h-20 w-36 flex-shrink-0">
+            <div className="relative h-16 w-32 flex-shrink-0">
               <Image
                 src="/ieeepune.png"
                 alt="IEEE Pune Section Logo"
                 fill
-                sizes="(max-width: 768px) 144px, 144px"
+                sizes="(max-width: 768px) 128px, 128px"
                 className="object-contain"
               />
             </div>
             {/* 4. PCCoE */}
-            <div className="relative h-20 w-36 flex-shrink-0">
+            <div className="relative h-16 w-32 flex-shrink-0">
               <Image
                 src="/pccoe.jpeg"
                 alt="PCCoE Logo"
                 fill
-                sizes="(max-width: 768px) 144px, 144px"
-                className="object-contain rounded-md"
+                sizes="(max-width: 768px) 128px, 128px"
+                className="object-contain rounded-sm"
               />
             </div>
           </div>
@@ -83,10 +86,10 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
-          <div className="space-y-4 text-foreground leading-relaxed">
+          <h2 className="text-3xl font-semibold text-[#080808] mb-6">Our Mission</h2>
+          <div className="space-y-4 text-[#5a5a5a] leading-relaxed">
             <p>
               The IEEE Computational Intelligence Society Summer School is a flagship educational initiative designed to
               advance knowledge and skills in computational intelligence. Our mission is to provide a transformative learning
@@ -94,37 +97,37 @@ export default function AboutPage() {
             </p>
             <p>
               We bring together leading researchers, industry practitioners, and emerging talent to explore the frontiers of
-              artificial neural networks, evolutionary algorithms, fuzzy logic, and swarm intelligence. Through intensive
+              fine-tuning large language models, inference optimization, neural networks, and model compression. Through intensive
               hands-on training, mentorship, and collaborative learning, we empower participants to advance their careers and
-              contribute to the field of computational intelligence.
+              contribute to state-of-the-art AI development.
             </p>
           </div>
         </div>
       </section>
 
       {/* Who Should Attend */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted border-y border-border">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fafafa] border-y border-[#d8d8d8]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Who Should Attend?</h2>
+          <h2 className="text-3xl font-semibold text-[#080808] mb-8">Who Should Attend?</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: 'Students',
-                description: 'Graduate and advanced undergraduate students looking to build expertise in computational intelligence and AI',
+                description: 'Graduate and advanced undergraduate students looking to build deep expertise in LLM fine-tuning and AI research.',
               },
               {
                 title: 'Researchers',
-                description: 'Academic researchers seeking to deepen knowledge and network with peers in computational intelligence',
+                description: 'Academic researchers seeking to deepen knowledge, publish papers, and collaborate with leading AI scientists.',
               },
               {
                 title: 'Professionals',
-                description: 'Industry engineers and data scientists looking to advance their skills and career in AI and ML',
+                description: 'Industry engineers, ML engineers, and data scientists looking to master scalable model deployment and inference acceleration.',
               },
             ].map((item, idx) => (
-              <Card key={idx} className="p-6 border border-border">
-                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+              <Card key={idx} className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] hover:border-[#080808] hover:shadow-layered transition-all">
+                <h3 className="text-xl font-semibold text-[#080808] mb-3">{item.title}</h3>
+                <p className="text-[#5a5a5a] text-sm leading-relaxed">{item.description}</p>
               </Card>
             ))}
           </div>
@@ -132,11 +135,11 @@ export default function AboutPage() {
       </section>
 
       {/* Why PCCOE */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Why PCCOE Summer School?</h2>
+          <h2 className="text-3xl font-semibold text-[#080808] mb-8">Why PCCoE Summer School?</h2>
 
-          <div className="space-y-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {[
               {
                 title: 'World-Class Instructors',
@@ -146,32 +149,32 @@ export default function AboutPage() {
               {
                 title: 'Comprehensive Curriculum',
                 description:
-                  'Cover all major areas of computational intelligence: neural networks, evolutionary algorithms, fuzzy systems, and swarm intelligence with both theory and practice.',
+                  'Cover core foundations to cutting-edge techniques: LoRA/QLoRA, SFT, DPO/RLHF, Quantization, Distillation, and high-throughput vLLM serving.',
               },
               {
-                title: 'Hands-on Learning',
+                title: 'Hands-on GPU Labs',
                 description:
-                  'Participate in intensive practical labs using industry-standard tools like Python, TensorFlow, and PyTorch to build real systems and solve real problems.',
+                  'Participate in intensive practical labs using industry-standard tools like Python, PyTorch, HuggingFace, and vLLM on high-performance compute.',
               },
               {
                 title: 'Networking Opportunities',
                 description:
-                  'Connect with peers from over 40 countries, build professional relationships, and expand your global network in the computational intelligence community.',
+                  'Connect with passionate peers, build lasting research relationships, and expand your network within the global IEEE community.',
               },
               {
                 title: 'IEEE CIS Recognized Certificate',
                 description:
-                  'Earn an official certificate of completion from the IEEE Computational Intelligence Society, a leading organization in the field.',
+                  'Earn an official certificate of completion from the IEEE Computational Intelligence Society, validating your specialized training.',
               },
               {
                 title: 'Career Advancement',
                 description:
-                  'Develop advanced skills and credentials that open doors to new opportunities in research, industry, and entrepreneurship.',
+                  'Develop production-grade engineering skills that open doors to high-impact roles in research labs and AI engineering teams.',
               },
             ].map((item, idx) => (
-              <div key={idx} className="border-l-4 border-l-primary pl-6 py-2">
-                <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+              <div key={idx} className="border border-[#d8d8d8] rounded-[8px] bg-white p-6 border-l-4 border-l-[#080808] hover:shadow-layered transition-all">
+                <h3 className="font-semibold text-[#080808] mb-2 text-lg">{item.title}</h3>
+                <p className="text-[#5a5a5a] text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -179,40 +182,37 @@ export default function AboutPage() {
       </section>
 
       {/* History Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted border-y border-border">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fafafa] border-y border-[#d8d8d8]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Program History</h2>
+          <h2 className="text-3xl font-semibold text-[#080808] mb-8">Program History</h2>
 
-          <div className="bg-background rounded-lg p-8 border border-border">
-            <p className="text-foreground mb-4">
-              The PCCOE Summer School has been held annually since 2015, establishing itself as a premier educational event
-              in computational intelligence. Over the past decade, we have trained more than 500 participants from over 40
-              countries, many of whom have gone on to leading positions in academia and industry.
+          <div className="bg-white rounded-[8px] p-8 border border-[#d8d8d8] shadow-sm">
+            <p className="text-[#5a5a5a] mb-4 leading-relaxed">
+              The IEEE CIS Summer School is held annually, establishing itself as a premier educational event
+              in computational intelligence. Over the years, the program has trained hundreds of researchers and practitioners who have gone on to impactful positions in academia and industry.
             </p>
-            <p className="text-foreground">
-              Our program has evolved to reflect the cutting-edge developments in AI and machine learning while maintaining our
-              commitment to rigorous, hands-on instruction. With the success of previous years and growing demand, we continue
-              to enhance the curriculum and learning experience for new participants.
+            <p className="text-[#5a5a5a] leading-relaxed">
+              Our 2026 edition hosted at PCCoE Pune focuses specifically on the breakthrough developments in Large Language Models, Fine-Tuning methodologies, and Inference Optimization, uniting theory and real-world system implementations.
             </p>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">By the Numbers</h2>
+          <h2 className="text-3xl font-semibold text-[#080808] mb-12 text-center">By the Numbers</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: '10+', label: 'Years of Excellence' },
-              { number: '500+', label: 'Participants Trained' },
-              { number: '40+', label: 'Countries Represented' },
-              { number: '20+', label: 'Expert Instructors' },
+              { number: '6', label: 'Intensive Days' },
+              { number: '60', label: 'Selected Seats' },
+              { number: '10+', label: 'Expert Instructors' },
+              { number: '20+', label: 'Lab Hours' },
             ].map((stat, idx) => (
-              <div key={idx} className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <p className="text-muted-foreground">{stat.label}</p>
+              <div key={idx} className="text-center p-6 rounded-[8px] bg-[#fafafa] border border-[#d8d8d8]">
+                <div className="text-4xl font-semibold text-[#080808] mb-2">{stat.number}</div>
+                <p className="text-[#5a5a5a] text-sm font-medium">{stat.label}</p>
               </div>
             ))}
           </div>

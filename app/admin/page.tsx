@@ -21,75 +21,72 @@ export default function AdminPortalPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-white text-[#5a5a5a] flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Ambient lighting effects */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10 pointer-events-none" />
-
+      <main className="flex-1 flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-4 border border-primary/20 shadow-sm">
-              <ShieldCheck className="w-7 h-7" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-[4px] bg-[#f5f5f5] text-[#080808] mb-4 border border-[#d8d8d8] shadow-sm">
+              <ShieldCheck className="w-6 h-6" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground">Admin Portal</h1>
-            <p className="text-sm text-muted-foreground mt-2">
+            <h1 className="text-3xl font-semibold text-[#080808] tracking-[-0.8px]">Admin Portal</h1>
+            <p className="text-sm text-[#5a5a5a] mt-2">
               IEEE CIS Summer School Administration
             </p>
-            <p className="text-xs text-primary font-medium mt-0.5">
-              hosted by Department of CSE (AI &amp; ML), PCCOE
+            <p className="text-xs text-[#080808] font-medium mt-0.5">
+              hosted by Dept. of CSE (AI &amp; ML), PCCoE
             </p>
           </div>
 
-          <Card className="p-8 border border-border shadow-xl backdrop-blur-sm bg-background/95">
+          <Card className="p-8 border border-[#d8d8d8] shadow-layered bg-white rounded-[8px]">
             <form onSubmit={handleLogin} className="space-y-5">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-foreground mb-2">
+                <label className="block text-xs font-medium uppercase tracking-[1.5px] text-[#080808] mb-2">
                   Administrator Email
                 </label>
                 <div className="relative">
-                  <Mail className="w-5 h-5 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Mail className="w-4 h-4 text-[#888888] absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="admin@pccoepune.org"
-                    className="w-full pl-11 pr-4 py-2.5 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-2 bg-white border border-[#d8d8d8] rounded-[4px] text-[#080808] placeholder-[#888888] text-sm focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] transition-all"
                   />
                 </div>
               </div>
 
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-foreground">
+                  <label className="block text-xs font-medium uppercase tracking-[1.5px] text-[#080808]">
                     Password
                   </label>
-                  <span className="text-xs text-primary cursor-pointer hover:underline">
+                  <span className="text-xs text-[#080808] cursor-pointer hover:underline font-medium">
                     Forgot password?
                   </span>
                 </div>
                 <div className="relative">
-                  <Lock className="w-5 h-5 text-muted-foreground absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Lock className="w-4 h-4 text-[#888888] absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type="password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••"
-                    className="w-full pl-11 pr-4 py-2.5 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-2 bg-white border border-[#d8d8d8] rounded-[4px] text-[#080808] placeholder-[#888888] text-sm focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] transition-all"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm text-[#5a5a5a]">
                 <input
                   type="checkbox"
                   id="remember"
-                  className="rounded border-border text-primary focus:ring-primary"
+                  className="rounded-[2px] border-[#d8d8d8] text-[#080808] focus:ring-[#080808]"
                 />
-                <label htmlFor="remember" className="text-xs cursor-pointer select-none">
+                <label htmlFor="remember" className="text-xs cursor-pointer select-none text-[#5a5a5a]">
                   Keep me signed in for 30 days
                 </label>
               </div>
@@ -97,20 +94,20 @@ export default function AdminPortalPage() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-70 text-sm"
+                className="w-full py-2.5 bg-[#080808] text-white font-medium rounded-[4px] hover:bg-[#222222] transition-all duration-150 flex items-center justify-center gap-2 shadow-sm disabled:opacity-70 text-sm cursor-pointer"
               >
                 {status === 'loading' ? 'Authenticating...' : 'Sign In to Admin Portal'}
                 <ArrowRight size={16} />
               </button>
 
               {status === 'error' && (
-                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600 dark:text-red-400 text-xs text-center">
+                <div className="p-3 bg-red-50 border border-red-200 rounded-[4px] text-red-600 text-xs text-center">
                   Invalid administrative credentials or account not provisioned for v1 portal access.
                 </div>
               )}
             </form>
 
-            <div className="mt-6 pt-6 border-t border-border text-center text-xs text-muted-foreground">
+            <div className="mt-6 pt-6 border-t border-[#d8d8d8] text-center text-xs text-[#888888]">
               Authorized personnel only. All access attempts are logged and monitored for security.
             </div>
           </Card>
@@ -118,7 +115,7 @@ export default function AdminPortalPage() {
           <div className="mt-8 text-center">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-[#5a5a5a] hover:text-[#080808] transition-colors font-medium"
             >
               <ArrowLeft size={14} /> Back to Event Home
             </Link>

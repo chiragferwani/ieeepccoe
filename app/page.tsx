@@ -24,7 +24,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-white text-[#363636] flex flex-col">
       <LoaderScreen />
       <Navbar />
       <SpotlightTicker />
@@ -37,37 +37,39 @@ export default function Home() {
       <StatsSection />
 
       {/* Why Attend Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
-        {/* Decorative background blur shapes for glassmorphism highlights */}
-        <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-violet-200/20 dark:bg-violet-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-sky-200/20 dark:bg-sky-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-[#d8d8d8]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">Why Attend?</h2>
-          <p className="text-center text-lg text-muted-foreground mb-12">
-            A 6-day intensive residential and hybrid program hosted by Department of CSE (AI &amp; ML), PCCOE. Learn from world-class researchers and industry experts in fine-tuning LLMs and inference optimization.
-          </p>
+          <div className="text-center mb-12">
+            <span className="eyebrow block mb-3">Why Attend</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#080808] tracking-tight mb-4">
+              Designed for Builders, Researchers, and AI Engineers
+            </h2>
+            <p className="text-base sm:text-lg text-[#5a5a5a] max-w-2xl mx-auto font-normal">
+              A 6-day intensive residential program at Pimpri Chinchwad College of Engineering. Learn from world-class researchers and industry experts in fine-tuning LLMs and inference optimization.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-4 mb-10">
             {outcomes.map((outcome, idx) => (
-              <div key={idx} className="flex gap-3">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-foreground">{outcome}</span>
+              <div key={idx} className="flex gap-3 p-4 rounded-[8px] bg-[#f9f9f9] border border-[#d8d8d8]">
+                <CheckCircle2 className="w-5 h-5 text-[#080808] flex-shrink-0 mt-0.5" />
+                <span className="text-[#363636] text-sm leading-relaxed">{outcome}</span>
               </div>
             ))}
           </div>
 
-          <div className="bg-muted/40 dark:bg-muted/10 backdrop-blur-md border border-white/20 dark:border-white/5 rounded-2xl p-8 shadow-lg text-center">
-            <p className="text-lg text-foreground mb-4 font-semibold">
-              June 22-27, 2026 | Pune, India
+          <div className="bg-[#f5f5f5] border border-[#d8d8d8] rounded-[8px] p-8 text-center">
+            <p className="text-lg text-[#080808] mb-2 font-semibold">
+              June 22–27, 2026 • Pune, India
             </p>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm text-[#5a5a5a] mb-6 max-w-xl mx-auto">
               Limited to 80 participants. Supported by IEEE CIS and hosted at PCCoE with state-of-the-art GPU-enabled facilities.
             </p>
             <Link
               href="/register"
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#080808] text-white font-medium text-sm rounded-[4px] hover:bg-[#222222] transition-colors"
             >
-              Register Now <Arrow size={18} />
+              Register Now <Arrow size={16} />
             </Link>
           </div>
         </div>
@@ -80,23 +82,21 @@ export default function Home() {
       <ScheduleSwitcher />
 
       {/* Plenary Presenters Preview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted border-y border-border">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f9f9f9] border-y border-[#d8d8d8]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
-            <span className="text-xs font-bold uppercase tracking-widest bg-primary/10 text-primary px-3 py-1.5 rounded-full border border-primary/20">
-              Distinguished Faculty &amp; Experts
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-4 mb-4">Plenary Presenters</h2>
-            <p className="text-xl font-medium text-foreground max-w-2xl mx-auto mb-4">
+            <span className="eyebrow block mb-3">Distinguished Faculty &amp; Experts</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#080808] tracking-tight mb-4">Plenary Presenters</h2>
+            <p className="text-lg font-medium text-[#080808] max-w-2xl mx-auto mb-3">
               Renowned professors and industry experts will be presenting.
             </p>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="text-sm text-[#5a5a5a] max-w-2xl mx-auto leading-relaxed">
               Our comprehensive six-day curriculum features talks, tutorials, and hands-on clinics led by preeminent researchers and practitioners from top academic institutes and global tech pioneers.
             </p>
           </div>
 
           {/* Featured Institutions Chips Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-10 max-w-3xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10 max-w-3xl mx-auto">
             {[
               'IIT Bombay',
               'ISI Kolkata',
@@ -111,7 +111,7 @@ export default function Home() {
             ].map((institution, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 bg-background border border-border/80 rounded-lg text-sm font-semibold text-foreground shadow-sm hover:border-primary/50 transition-colors"
+                className="px-3.5 py-1.5 bg-white border border-[#d8d8d8] rounded-[4px] text-xs font-medium text-[#080808]"
               >
                 {institution}
               </span>
@@ -121,31 +121,32 @@ export default function Home() {
           <div>
             <Link
               href="/speakers"
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#080808] text-white font-medium text-sm rounded-[4px] hover:bg-[#222222] transition-colors"
             >
-              Learn More About Plenary Sessions <Arrow size={18} />
+              Learn More About Plenary Sessions <Arrow size={16} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-violet-100 via-blue-100 to-cyan-100 dark:from-violet-950 dark:via-blue-950 dark:to-cyan-950 border-y border-border">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#080808] text-white border-t border-[#080808]">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Ready to Transform Your Skills?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <span className="text-xs font-medium uppercase tracking-[1.5px] text-[#ababab] block mb-3">Join the Cohort</span>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4 tracking-tight">Ready to Transform Your Skills?</h2>
+          <p className="text-base text-[#ababab] mb-8 font-normal">
             Join 500+ participants who have advanced their careers through the PCCOE Summer School.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link
               href="/register"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#080808] font-medium text-sm rounded-[4px] hover:bg-[#f5f5f5] transition-colors"
             >
-              Register Now <Arrow size={18} />
+              Register Now <Arrow size={16} />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-background text-foreground font-semibold rounded-md hover:bg-muted transition-colors border border-border"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-medium text-sm rounded-[4px] hover:bg-white/10 transition-colors border border-white/30"
             >
               Get in Touch
             </Link>

@@ -24,7 +24,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    // In a real application, this would send to a backend
     console.log('Form submitted:', formState)
     setIsSubmitted(true)
     setTimeout(() => {
@@ -41,40 +40,47 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-white text-[#5a5a5a] flex flex-col font-sans">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Get in Touch</h1>
-          <p className="text-xl text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-[4px] bg-[#f5f5f5] text-[#080808] text-xs font-medium uppercase tracking-[1.5px] mb-6 border border-[#d8d8d8]">
+            Contact Us
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-semibold text-[#080808] mb-4 tracking-[-0.8px]">Get in Touch</h1>
+          <p className="text-lg sm:text-xl text-[#5a5a5a] leading-relaxed">
             Have questions? We&apos;d love to hear from you. Reach out to our team.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 mb-16">
             {/* Contact Cards */}
-            <Card className="p-6 border border-border">
+            <Card className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] hover:border-[#080808] hover:shadow-layered transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <Mail className="w-6 h-6 text-primary" />
-                <h3 className="text-lg font-bold text-foreground">Email</h3>
+                <div className="w-10 h-10 rounded-[4px] bg-[#f5f5f5] text-[#080808] flex items-center justify-center flex-shrink-0 border border-[#d8d8d8]">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-[#080808]">Email</h3>
               </div>
-              <p className="text-muted-foreground mb-4">General inquiries, registration support, and collaborations</p>
-              <a href="mailto:cissummerschool@pccoepune.org" className="text-primary font-semibold hover:underline text-lg">
+              <p className="text-[#5a5a5a] mb-4 text-sm">General inquiries, registration support, and collaborations</p>
+              <a href="mailto:cissummerschool@pccoepune.org" className="text-[#080808] font-medium hover:underline text-base break-all">
                 cissummerschool@pccoepune.org
               </a>
             </Card>
 
-            <Card className="p-6 border border-border">
+            <Card className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] hover:border-[#080808] hover:shadow-layered transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-6 h-6 text-primary" />
-                <h3 className="text-lg font-bold text-foreground">Location</h3>
+                <div className="w-10 h-10 rounded-[4px] bg-[#f5f5f5] text-[#080808] flex items-center justify-center flex-shrink-0 border border-[#d8d8d8]">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-[#080808]">Location</h3>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-[#5a5a5a] text-sm leading-relaxed">
                 Department of CSE (AI &amp; ML), PCCoE<br />
                 Pimpri Chinchwad College of Engineering<br />
                 Sector 26, Pradhikaran, Nigdi, Pune – 411044, Maharashtra, India
@@ -85,11 +91,11 @@ export default function ContactPage() {
           {/* Contact Form & Hours */}
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
+            <div className="bg-white rounded-[8px] p-8 border border-[#d8d8d8] shadow-sm">
+              <h2 className="text-2xl font-semibold text-[#080808] mb-6">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-[#080808] mb-1.5">
                     Name
                   </label>
                   <input
@@ -99,13 +105,13 @@ export default function ContactPage() {
                     value={formState.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3.5 py-2.5 border border-[#d8d8d8] rounded-[4px] bg-white text-[#080808] placeholder-[#888888] focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] text-sm"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-[#080808] mb-1.5">
                     Email
                   </label>
                   <input
@@ -115,13 +121,13 @@ export default function ContactPage() {
                     value={formState.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3.5 py-2.5 border border-[#d8d8d8] rounded-[4px] bg-white text-[#080808] placeholder-[#888888] focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] text-sm"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-[#080808] mb-1.5">
                     Subject
                   </label>
                   <input
@@ -131,13 +137,13 @@ export default function ContactPage() {
                     value={formState.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-3.5 py-2.5 border border-[#d8d8d8] rounded-[4px] bg-white text-[#080808] placeholder-[#888888] focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] text-sm"
                     placeholder="How can we help?"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-[#080808] mb-1.5">
                     Message
                   </label>
                   <textarea
@@ -147,20 +153,20 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-2 border border-border rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                    className="w-full px-3.5 py-2.5 border border-[#d8d8d8] rounded-[4px] bg-white text-[#080808] placeholder-[#888888] focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] resize-none text-sm"
                     placeholder="Your message..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
+                  className="w-full px-6 py-2.5 bg-[#080808] text-white font-medium rounded-[4px] hover:bg-[#222222] transition-all shadow-sm cursor-pointer text-sm"
                 >
                   Send Message
                 </button>
 
                 {isSubmitted && (
-                  <div className="p-4 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-700 rounded-md text-green-700 dark:text-green-300 text-sm">
+                  <div className="p-4 bg-[#00d722]/15 border border-[#00d722]/40 rounded-[4px] text-[#080808] text-sm">
                     Thank you for your message! We&apos;ll get back to you shortly.
                   </div>
                 )}
@@ -169,21 +175,23 @@ export default function ContactPage() {
 
             {/* Contact Info & Hours */}
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-semibold text-[#080808] mb-6">Contact Information</h2>
 
-              <Card className="p-6 border border-border mb-6">
+              <Card className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] mb-6">
                 <div className="flex items-start gap-3 mb-6">
-                  <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <div className="w-10 h-10 rounded-[4px] bg-[#f5f5f5] text-[#080808] flex items-center justify-center flex-shrink-0 border border-[#d8d8d8]">
+                    <Clock className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h3 className="font-bold text-foreground mb-3">Office Hours</h3>
-                    <div className="space-y-2 text-muted-foreground text-sm">
+                    <h3 className="font-semibold text-[#080808] mb-3">Office Hours</h3>
+                    <div className="space-y-2 text-[#5a5a5a] text-sm">
                       <p>
-                        <strong className="text-foreground">Monday - Friday</strong>
+                        <strong className="text-[#080808]">Monday - Friday</strong>
                         <br />
                         9:00 AM - 6:00 PM (IST)
                       </p>
                       <p>
-                        <strong className="text-foreground">Saturday & Sunday</strong>
+                        <strong className="text-[#080808]">Saturday &amp; Sunday</strong>
                         <br />
                         Closed (email us anytime)
                       </p>
@@ -192,33 +200,32 @@ export default function ContactPage() {
                 </div>
               </Card>
 
-              <Card className="p-6 border border-border">
-                <h3 className="font-bold text-foreground mb-4">Rapid Response</h3>
-                <ul className="space-y-3 text-muted-foreground text-sm">
+              <Card className="p-6 border border-[#d8d8d8] bg-white rounded-[8px]">
+                <h3 className="font-semibold text-[#080808] mb-4">Support &amp; Assistance</h3>
+                <ul className="space-y-3 text-[#5a5a5a] text-sm">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#080808] flex-shrink-0" />
                     <span>Email responses within 24 hours</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>Dedicated participant assistance</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#080808] flex-shrink-0" />
+                    <span>Dedicated participant onboarding support</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>Visa assistance available</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#080808] flex-shrink-0" />
+                    <span>Hostel guest house accommodation assistance</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>Travel coordination support</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#080808] flex-shrink-0" />
+                    <span>Travel grant &amp; logistics coordination</span>
                   </li>
                 </ul>
               </Card>
 
-              <Card className="p-6 border border-border mt-6 bg-muted">
-                <h3 className="font-bold text-foreground mb-2">Special Requests?</h3>
-                <p className="text-muted-foreground text-sm">
-                  Have specific needs or questions? Use the contact form to let us know and we&apos;ll reach out to discuss how
-                  we can help.
+              <Card className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] mt-6">
+                <h3 className="font-semibold text-[#080808] mb-2">Special Requests?</h3>
+                <p className="text-[#5a5a5a] text-sm leading-relaxed">
+                  Have specific requirements or need faculty authorization? Use the contact form to let us know and we&apos;ll reach out promptly.
                 </p>
               </Card>
             </div>
@@ -227,44 +234,47 @@ export default function ContactPage() {
       </section>
 
       {/* Development Team */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted border-y border-border">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fafafa] border-t border-[#d8d8d8]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Development Team</h2>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            The talented student developers at Pimpri Chinchwad College of Engineering who built and designed this platform.
+          <h2 className="text-3xl font-semibold text-[#080808] mb-3 text-center">Development Team</h2>
+          <p className="text-[#5a5a5a] text-center mb-12 max-w-2xl mx-auto text-sm sm:text-base">
+            The student developers at Pimpri Chinchwad College of Engineering who built and designed this platform.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Vrushabh Hirap', link: 'https://www.linkedin.com/in/vrushabh-hirap/', image: '/vrushabh.jpeg' },
-              { name: 'Chirag Ferwani', link: 'https://www.linkedin.com/in/chiragferwani', image: '/chiragferwani.png' },
-              { name: 'Kshitij Jadhav', link: 'https://www.linkedin.com/in/kshitij-jadhav/', image: '/kshitij.png' },
+              { name: 'Vrushabh Hirap', role: 'Full-Stack Developer', link: 'https://www.linkedin.com/in/vrushabh-hirap/', image: '/vrushabh.jpeg' },
+              { name: 'Chirag Ferwani', role: 'Full-Stack Developer', link: 'https://www.linkedin.com/in/chiragferwani', image: '/chiragferwani.png' },
+              { name: 'Kshitij Jadhav', role: 'Frontend Developer', link: 'https://www.linkedin.com/in/kshitij-jadhav/', image: '/kshitij.png' },
             ].map((member, idx) => (
-              <Card key={idx} className="p-5 border border-border flex flex-col items-center justify-between text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 max-w-sm mx-auto w-full">
+              <Card key={idx} className="p-6 border border-[#d8d8d8] bg-white rounded-[8px] flex flex-col items-center justify-between text-center hover:border-[#080808] hover:shadow-layered transition-all duration-200 max-w-sm mx-auto w-full">
                 <div className="flex flex-col items-center w-full">
-                  <div className="relative w-32 h-32 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-4xl mb-4 flex-shrink-0 overflow-hidden border border-border/50">
+                  <div className="relative w-24 h-24 bg-[#f0f0f0] text-[#080808] rounded-full flex items-center justify-center font-semibold text-2xl mb-4 flex-shrink-0 overflow-hidden border border-[#d8d8d8] shadow-sm">
                     {member.image ? (
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
-                        sizes="128px"
+                        sizes="96px"
                         className="object-cover"
                       />
                     ) : (
-                      member.name.split(' ').map(n => n[0]).join('')
+                      <span className="text-[#080808] font-semibold">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
                     )}
                   </div>
-                  <h3 className="font-bold text-foreground text-base mb-3">{member.name}</h3>
+                  <h3 className="font-semibold text-[#080808] text-base mb-1">{member.name}</h3>
+                  <p className="text-xs font-medium text-[#5a5a5a] mb-3">{member.role}</p>
                 </div>
                 <a
                   href={member.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-muted rounded-full"
+                  className="text-[#5a5a5a] hover:text-[#080808] transition-colors p-2 hover:bg-[#f5f5f5] rounded-full"
                   aria-label={`${member.name} LinkedIn`}
                 >
-                  <LinkedinIcon className="w-6 h-6" />
+                  <LinkedinIcon className="w-5 h-5" />
                 </a>
               </Card>
             ))}

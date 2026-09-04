@@ -161,11 +161,9 @@ function wordCount(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length
 }
 
-// ─── Styles ───────────────────────────────────────────────────
-
 const inputBase =
-  'w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all'
-const labelBase = 'block text-sm font-medium text-foreground mb-1.5'
+  'w-full px-3.5 py-2.5 rounded-[4px] border border-[#d8d8d8] bg-white text-[#080808] text-sm placeholder:text-[#888888] focus:outline-none focus:border-[#080808] focus:ring-1 focus:ring-[#080808] transition-all'
+const labelBase = 'block text-sm font-medium text-[#080808] mb-1.5'
 
 // ─── Component ────────────────────────────────────────────────
 
@@ -264,7 +262,6 @@ export function RegistrationForm() {
     setSubmitResult(null)
     try {
       const fd = new window.FormData()
-      // Scalar
       const scalars: (keyof FormData)[] = [
         'full_name','gender','date_of_birth','email','phone_number','whatsapp_number',
         'city','state','country','current_status','institution_name','department',
@@ -275,12 +272,10 @@ export function RegistrationForm() {
         'travelling_from','travel_grant_justification',
       ]
       for (const k of scalars) fd.append(k, form[k] as string)
-      // JSON
       fd.append('technical_skills', JSON.stringify(form.technical_skills))
       fd.append('publications', JSON.stringify(form.publications))
       fd.append('internships', JSON.stringify(form.internships))
       fd.append('topics_of_interest', JSON.stringify(form.topics_of_interest))
-      // Files
       if (form.photograph) fd.append('photograph', form.photograph)
       if (form.institution_recommendation_letter) fd.append('institution_recommendation_letter', form.institution_recommendation_letter)
       if (form.ieee_recommendation_letter) fd.append('ieee_recommendation_letter', form.ieee_recommendation_letter)
@@ -298,9 +293,9 @@ export function RegistrationForm() {
   // ─── Render helpers ─────────────────────────────────────────
 
   const Err = ({ k }: { k: string }) =>
-    errors[k] ? <p className="text-xs text-red-500 mt-1">{errors[k]}</p> : null
+    errors[k] ? <p className="text-xs text-red-600 mt-1">{errors[k]}</p> : null
 
-  const Star = () => <span className="text-red-400 ml-0.5">*</span>
+  const Star = () => <span className="text-red-500 ml-0.5">*</span>
 
   const Input = ({
     k, label, required, type = 'text', placeholder,
@@ -313,7 +308,7 @@ export function RegistrationForm() {
         type={type}
         value={form[k] as string}
         onChange={(e) => set(k, e.target.value as never)}
-        className={`${inputBase} ${errors[k] ? 'border-red-400 focus:ring-red-400/40' : ''}`}
+        className={`${inputBase} ${errors[k] ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
         placeholder={placeholder}
       />
       <Err k={k} />
@@ -327,20 +322,20 @@ export function RegistrationForm() {
   }) => (
     <div>
       <label className={labelBase}>{label}{required && <Star />}</label>
-      {note && <p className="text-xs text-muted-foreground mb-2">{note}</p>}
+      {note && <p className="text-xs text-[#5a5a5a] mb-2">{note}</p>}
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => (
           <label
             key={opt}
-            className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border text-sm cursor-pointer transition-all select-none ${
+            className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-[4px] border text-sm cursor-pointer transition-all select-none ${
               form[k] === opt
-                ? 'border-primary bg-primary/5 text-foreground shadow-sm'
-                : 'border-border text-muted-foreground hover:border-primary/30 hover:bg-muted/30'
+                ? 'border-[#080808] bg-[#080808] text-white shadow-sm'
+                : 'border-[#d8d8d8] text-[#5a5a5a] bg-white hover:border-[#080808]'
             }`}
           >
             <input type="radio" name={k} value={opt} checked={form[k] === opt} onChange={(e) => set(k, e.target.value as never)} className="sr-only" />
-            <div className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${form[k] === opt ? 'border-primary' : 'border-muted-foreground/30'}`}>
-              {form[k] === opt && <div className="w-1.5 h-1.5 rounded-full bg-primary" />}
+            <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center flex-shrink-0 ${form[k] === opt ? 'border-white' : 'border-[#888888]'}`}>
+              {form[k] === opt && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
             </div>
             <span className="font-medium">{opt}</span>
           </label>
@@ -354,26 +349,26 @@ export function RegistrationForm() {
 
   if (submitResult?.success) {
     return (
-      <div ref={formRef} className="border border-border rounded-2xl bg-background p-8 sm:p-12 text-center shadow-sm">
-        <div className="w-16 h-16 bg-green-50 text-green-600 dark:bg-green-950/30 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-5 border border-green-200 dark:border-green-800">
+      <div ref={formRef} className="border border-[#d8d8d8] rounded-[8px] bg-white p-8 sm:p-12 text-center shadow-layered">
+        <div className="w-16 h-16 bg-[#00d722]/15 text-[#080808] rounded-full flex items-center justify-center mx-auto mb-5 border border-[#00d722]/40">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Application Submitted</h2>
-        <p className="text-muted-foreground mb-1">Your application to the IEEE CIS Summer School has been received.</p>
-        <p className="text-sm text-muted-foreground">Confirmation will be sent to <strong className="text-foreground">{form.email}</strong></p>
+        <h2 className="text-2xl font-semibold text-[#080808] mb-2">Application Submitted</h2>
+        <p className="text-[#5a5a5a] mb-1">Your application to the IEEE CIS Summer School has been received.</p>
+        <p className="text-sm text-[#5a5a5a]">Confirmation will be sent to <strong className="text-[#080808]">{form.email}</strong></p>
       </div>
     )
   }
 
   if (submitResult && !submitResult.success) {
     return (
-      <div ref={formRef} className="border border-border rounded-2xl bg-background p-8 sm:p-12 text-center shadow-sm">
-        <div className="w-16 h-16 bg-red-50 text-red-500 dark:bg-red-950/30 dark:text-red-400 rounded-full flex items-center justify-center mx-auto mb-5 border border-red-200 dark:border-red-800">
+      <div ref={formRef} className="border border-red-200 rounded-[8px] bg-white p-8 sm:p-12 text-center shadow-layered">
+        <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-5 border border-red-200">
           <AlertCircle className="w-8 h-8" />
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Submission Failed</h2>
-        <p className="text-red-500 text-sm mb-6 max-w-md mx-auto">{submitResult.error}</p>
-        <button onClick={() => setSubmitResult(null)} className="px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm">
+        <h2 className="text-2xl font-semibold text-[#080808] mb-2">Submission Failed</h2>
+        <p className="text-red-600 text-sm mb-6 max-w-md mx-auto">{submitResult.error}</p>
+        <button onClick={() => setSubmitResult(null)} className="px-6 py-2.5 bg-[#080808] text-white font-medium rounded-[4px] hover:bg-[#222222] transition-colors text-sm">
           Try Again
         </button>
       </div>
@@ -407,7 +402,7 @@ export function RegistrationForm() {
               <Input k="country" label="Country" required placeholder="India" />
             </div>
             <div>
-              <label className={labelBase}>Photograph <span className="text-muted-foreground font-normal text-xs">(optional, for ID card)</span></label>
+              <label className={labelBase}>Photograph <span className="text-[#5a5a5a] font-normal text-xs">(optional, for ID card)</span></label>
               <input type="file" accept="image/*" onChange={(e) => set('photograph', e.target.files?.[0] || null)} className={inputBase} />
             </div>
           </div>
@@ -434,7 +429,7 @@ export function RegistrationForm() {
       case 2:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground -mt-1 mb-2">
+            <p className="text-sm text-[#5a5a5a] -mt-1 mb-2">
               Your IEEE membership details help with registration categorization and reporting.
             </p>
             <Radio k="ieee_membership_status" label="IEEE Membership Status" options={['IEEE Student Member', 'Non-IEEE']} required />
@@ -448,25 +443,25 @@ export function RegistrationForm() {
       case 3:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground -mt-1 mb-2">
+            <p className="text-sm text-[#5a5a5a] -mt-1 mb-2">
               Rate your proficiency in each AI/ML skill. This helps us tailor the program.
             </p>
 
             {/* Desktop table */}
-            <div className="hidden md:block border border-border rounded-xl overflow-hidden">
+            <div className="hidden md:block border border-[#d8d8d8] rounded-[8px] overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="bg-muted/50">
-                    <th className="text-left text-xs font-semibold text-foreground py-2.5 px-4 border-b border-border">Skill</th>
+                  <tr className="bg-[#f5f5f5]">
+                    <th className="text-left text-xs font-semibold text-[#080808] py-2.5 px-4 border-b border-[#d8d8d8]">Skill</th>
                     {SKILL_LEVELS.map((l) => (
-                      <th key={l} className="text-center text-xs font-semibold text-foreground py-2.5 px-3 border-b border-border w-24">{l}</th>
+                      <th key={l} className="text-center text-xs font-semibold text-[#080808] py-2.5 px-3 border-b border-[#d8d8d8] w-24">{l}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {SKILLS.map((skill, i) => (
-                    <tr key={skill} className={`${i % 2 === 0 ? 'bg-background' : 'bg-muted/20'} hover:bg-muted/40 transition-colors`}>
-                      <td className="py-2.5 px-4 text-sm text-foreground font-medium">{skill}</td>
+                    <tr key={skill} className={`${i % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'} hover:bg-[#f5f5f5] transition-colors border-b border-[#d8d8d8] last:border-b-0`}>
+                      <td className="py-2.5 px-4 text-sm text-[#080808] font-medium">{skill}</td>
                       {SKILL_LEVELS.map((level) => (
                         <td key={level} className="text-center py-2.5 px-3">
                           <input
@@ -474,7 +469,7 @@ export function RegistrationForm() {
                             name={`skill_${skill}`}
                             checked={form.technical_skills[skill] === level}
                             onChange={() => set('technical_skills', { ...form.technical_skills, [skill]: level })}
-                            className="w-4 h-4 accent-primary cursor-pointer"
+                            className="w-4 h-4 accent-[#080808] cursor-pointer"
                           />
                         </td>
                       ))}
@@ -487,18 +482,18 @@ export function RegistrationForm() {
             {/* Mobile cards */}
             <div className="md:hidden space-y-3">
               {SKILLS.map((skill) => (
-                <div key={skill} className="border border-border rounded-lg p-3">
-                  <p className="text-sm font-medium text-foreground mb-2">{skill}</p>
+                <div key={skill} className="border border-[#d8d8d8] rounded-[8px] p-3 bg-white">
+                  <p className="text-sm font-medium text-[#080808] mb-2">{skill}</p>
                   <div className="grid grid-cols-4 gap-1.5">
                     {SKILL_LEVELS.map((level) => (
                       <button
                         key={level}
                         type="button"
                         onClick={() => set('technical_skills', { ...form.technical_skills, [skill]: level })}
-                        className={`py-1.5 px-1 rounded-md text-xs font-medium transition-all text-center ${
+                        className={`py-1.5 px-1 rounded-[4px] text-xs font-medium transition-all text-center ${
                           form.technical_skills[skill] === level
-                            ? 'bg-primary text-primary-foreground shadow-sm'
-                            : 'bg-muted/50 text-muted-foreground hover:bg-muted'
+                            ? 'bg-[#080808] text-white shadow-sm'
+                            : 'bg-[#f5f5f5] text-[#5a5a5a] border border-[#d8d8d8]'
                         }`}
                       >
                         {level}
@@ -517,19 +512,19 @@ export function RegistrationForm() {
             {/* Project */}
             <div>
               <label className={labelBase}>Describe your most relevant project<Star /></label>
-              <p className="text-xs text-muted-foreground mb-1.5">
+              <p className="text-xs text-[#5a5a5a] mb-1.5">
                 Include: Problem, Dataset, Model/approach, Tools, Your contribution, Result (150–200 words)
               </p>
               <textarea
                 value={form.relevant_project}
                 onChange={(e) => set('relevant_project', e.target.value)}
                 rows={5}
-                className={`${inputBase} resize-y ${errors.relevant_project ? 'border-red-400 focus:ring-red-400/40' : ''}`}
+                className={`${inputBase} resize-y ${errors.relevant_project ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                 placeholder="Describe the problem, dataset, approach, tools, your contribution, and result..."
               />
               <div className="flex justify-between mt-1">
                 <Err k="relevant_project" />
-                <p className="text-xs text-muted-foreground">{wordCount(form.relevant_project)} words</p>
+                <p className="text-xs text-[#5a5a5a]">{wordCount(form.relevant_project)} words</p>
               </div>
             </div>
 
@@ -541,24 +536,24 @@ export function RegistrationForm() {
             {/* Publications */}
             <div className="pt-2">
               <div className="flex items-center justify-between mb-2">
-                <label className={`${labelBase} mb-0`}>Publications <span className="text-muted-foreground font-normal text-xs">(optional)</span></label>
+                <label className={`${labelBase} mb-0`}>Publications <span className="text-[#5a5a5a] font-normal text-xs">(optional)</span></label>
                 <button
                   type="button"
                   onClick={() => set('publications', [...form.publications, { title: '', venue: '', year: '', doi_link: '' }])}
-                  className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 text-xs text-[#080808] font-semibold hover:underline"
                 >
                   <Plus className="w-3 h-3" />
                   Add Publication
                 </button>
               </div>
               {form.publications.map((pub, idx) => (
-                <div key={idx} className="border border-border rounded-lg p-3 mb-2 space-y-2 bg-muted/20">
+                <div key={idx} className="border border-[#d8d8d8] rounded-[8px] p-3 mb-2 space-y-2 bg-[#f9f9f9]">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-semibold text-muted-foreground">Publication {idx + 1}</span>
+                    <span className="text-xs font-semibold text-[#5a5a5a]">Publication {idx + 1}</span>
                     <button
                       type="button"
                       onClick={() => set('publications', form.publications.filter((_, i) => i !== idx))}
-                      className="inline-flex items-center gap-1 text-xs text-destructive hover:underline"
+                      className="inline-flex items-center gap-1 text-xs text-red-600 hover:underline"
                     >
                       <Trash2 className="w-3 h-3" />
                       Remove
@@ -577,24 +572,24 @@ export function RegistrationForm() {
             {/* Internships */}
             <div className="pt-2">
               <div className="flex items-center justify-between mb-2">
-                <label className={`${labelBase} mb-0`}>Internships <span className="text-muted-foreground font-normal text-xs">(optional)</span></label>
+                <label className={`${labelBase} mb-0`}>Internships <span className="text-[#5a5a5a] font-normal text-xs">(optional)</span></label>
                 <button
                   type="button"
                   onClick={() => set('internships', [...form.internships, { organization: '', role: '', duration: '', brief_description: '' }])}
-                  className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 text-xs text-[#080808] font-semibold hover:underline"
                 >
                   <Plus className="w-3 h-3" />
                   Add Internship
                 </button>
               </div>
               {form.internships.map((intern, idx) => (
-                <div key={idx} className="border border-border rounded-lg p-3 mb-2 space-y-2 bg-muted/20">
+                <div key={idx} className="border border-[#d8d8d8] rounded-[8px] p-3 mb-2 space-y-2 bg-[#f9f9f9]">
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-semibold text-muted-foreground">Internship {idx + 1}</span>
+                    <span className="text-xs font-semibold text-[#5a5a5a]">Internship {idx + 1}</span>
                     <button
                       type="button"
                       onClick={() => set('internships', form.internships.filter((_, i) => i !== idx))}
-                      className="inline-flex items-center gap-1 text-xs text-destructive hover:underline"
+                      className="inline-flex items-center gap-1 text-xs text-red-600 hover:underline"
                     >
                       <Trash2 className="w-3 h-3" />
                       Remove
@@ -619,39 +614,39 @@ export function RegistrationForm() {
               <label className={labelBase}>
                 Why do you want to attend the IEEE CIS Summer School on Fine-Tuning LLMs and Inference Optimization, and how do you plan to apply the knowledge gained?<Star />
               </label>
-              <p className="text-xs text-muted-foreground mb-1.5">Maximum 250 words</p>
+              <p className="text-xs text-[#5a5a5a] mb-1.5">Maximum 250 words</p>
               <textarea
                 value={form.motivation_primary}
                 onChange={(e) => set('motivation_primary', e.target.value)}
                 rows={7}
-                className={`${inputBase} resize-y ${errors.motivation_primary ? 'border-red-400 focus:ring-red-400/40' : ''}`}
+                className={`${inputBase} resize-y ${errors.motivation_primary ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                 placeholder="Describe your motivation and how you plan to apply the knowledge..."
               />
               <div className="flex justify-between mt-1">
                 <Err k="motivation_primary" />
-                <p className={`text-xs ${wordCount(form.motivation_primary) > 250 ? 'text-red-500 font-semibold' : 'text-muted-foreground'}`}>
+                <p className={`text-xs ${wordCount(form.motivation_primary) > 250 ? 'text-red-600 font-semibold' : 'text-[#5a5a5a]'}`}>
                   {wordCount(form.motivation_primary)} / 250
                 </p>
               </div>
             </div>
 
             <div>
-              <label className={labelBase}>Topics of interest <span className="text-muted-foreground font-normal text-xs">(optional, select all that apply)</span></label>
+              <label className={labelBase}>Topics of interest <span className="text-[#5a5a5a] font-normal text-xs">(optional, select all that apply)</span></label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {TOPICS.map((topic) => (
                   <label
                     key={topic}
-                    className={`inline-flex items-center gap-2.5 px-3 py-2.5 rounded-lg border text-sm cursor-pointer transition-all select-none ${
+                    className={`inline-flex items-center gap-2.5 px-3 py-2.5 rounded-[4px] border text-sm cursor-pointer transition-all select-none ${
                       form.topics_of_interest.includes(topic)
-                        ? 'border-primary bg-primary/5 text-foreground shadow-sm'
-                        : 'border-border text-muted-foreground hover:border-primary/30'
+                        ? 'border-[#080808] bg-[#080808]/5 text-[#080808] shadow-sm'
+                        : 'border-[#d8d8d8] text-[#5a5a5a] bg-white hover:border-[#080808]'
                     }`}
                   >
-                    <div className={`w-4 h-4 rounded border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                      form.topics_of_interest.includes(topic) ? 'border-primary bg-primary' : 'border-muted-foreground/30'
+                    <div className={`w-4 h-4 rounded-[3px] border flex items-center justify-center flex-shrink-0 transition-colors ${
+                      form.topics_of_interest.includes(topic) ? 'border-[#080808] bg-[#080808]' : 'border-[#888888]'
                     }`}>
                       {form.topics_of_interest.includes(topic) && (
-                        <Check className="w-3 h-3 text-primary-foreground stroke-[3]" />
+                        <Check className="w-3 h-3 text-white stroke-[3]" />
                       )}
                     </div>
                     <input
@@ -663,7 +658,7 @@ export function RegistrationForm() {
                       }}
                       className="sr-only"
                     />
-                    <span className="font-medium">{topic}</span>
+                    <span className="font-medium text-xs sm:text-sm">{topic}</span>
                   </label>
                 ))}
               </div>
@@ -674,12 +669,12 @@ export function RegistrationForm() {
       case 6:
         return (
           <div className="space-y-5">
-            <p className="text-sm text-muted-foreground -mt-1 mb-2">Upload recommendation letters in PDF format.</p>
+            <p className="text-sm text-[#5a5a5a] -mt-1 mb-2">Upload recommendation letters in PDF format.</p>
             <div>
               <label className={labelBase}>Recommendation Letter from HoD (Institution)<Star /></label>
-              <input type="file" accept="application/pdf" onChange={(e) => set('institution_recommendation_letter', e.target.files?.[0] || null)} className={`${inputBase} ${errors.institution_recommendation_letter ? 'border-red-400 focus:ring-red-400/40' : ''}`} />
+              <input type="file" accept="application/pdf" onChange={(e) => set('institution_recommendation_letter', e.target.files?.[0] || null)} className={`${inputBase} ${errors.institution_recommendation_letter ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`} />
               {form.institution_recommendation_letter && (
-                <p className="text-xs text-green-600 dark:text-green-400 mt-1.5 font-medium flex items-center gap-1">
+                <p className="text-xs text-green-700 mt-1.5 font-medium flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
                   {form.institution_recommendation_letter.name}
                 </p>
@@ -687,10 +682,10 @@ export function RegistrationForm() {
               <Err k="institution_recommendation_letter" />
             </div>
             <div>
-              <label className={labelBase}>Recommendation Letter (IEEE) <span className="text-muted-foreground font-normal text-xs">(optional)</span></label>
+              <label className={labelBase}>Recommendation Letter (IEEE) <span className="text-[#5a5a5a] font-normal text-xs">(optional)</span></label>
               <input type="file" accept="application/pdf" onChange={(e) => set('ieee_recommendation_letter', e.target.files?.[0] || null)} className={inputBase} />
               {form.ieee_recommendation_letter && (
-                <p className="text-xs text-green-600 dark:text-green-400 mt-1.5 font-medium flex items-center gap-1">
+                <p className="text-xs text-green-700 mt-1.5 font-medium flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0" />
                   {form.ieee_recommendation_letter.name}
                 </p>
@@ -702,7 +697,7 @@ export function RegistrationForm() {
       case 7:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground -mt-1 mb-2">The program is in-person and intensive. Limited to 60 participants.</p>
+            <p className="text-sm text-[#5a5a5a] -mt-1 mb-2">The program is in-person and intensive. Limited to 60 participants.</p>
             <Radio k="availability_confirmation" label="I confirm that I can attend the complete six-day program." options={['Yes', 'No']} required />
             <Radio k="accommodation_required" label="Do you require accommodation?" options={['Yes', 'No']} required note="FCFS Basis" />
             <Radio k="travel_assistance_required" label="Are you travelling from outside Pune City?" options={['Yes', 'No']} required note="Travel assistance is on FCFS Basis" />
@@ -711,7 +706,7 @@ export function RegistrationForm() {
                 <Input k="travelling_from" label="Travelling From" required placeholder="Mumbai, Delhi, etc." />
                 <div>
                   <label className={labelBase}>Why should we consider you for a travel grant?</label>
-                  <p className="text-xs text-muted-foreground mb-1.5">Maximum 100 characters</p>
+                  <p className="text-xs text-[#5a5a5a] mb-1.5">Maximum 100 characters</p>
                   <textarea
                     value={form.travel_grant_justification}
                     onChange={(e) => { if (e.target.value.length <= 100) set('travel_grant_justification', e.target.value) }}
@@ -720,7 +715,7 @@ export function RegistrationForm() {
                     placeholder="Briefly justify..."
                     maxLength={100}
                   />
-                  <p className="text-xs text-muted-foreground mt-1">{form.travel_grant_justification.length}/100</p>
+                  <p className="text-xs text-[#5a5a5a] mt-1">{form.travel_grant_justification.length}/100</p>
                 </div>
               </>
             )}
@@ -754,12 +749,12 @@ export function RegistrationForm() {
                   className={`flex flex-col items-center gap-1.5 group ${idx <= step ? 'cursor-pointer' : 'cursor-default'}`}
                 >
                   <div
-                    className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                    className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition-all ${
                       idx === step
-                        ? 'bg-primary text-primary-foreground shadow-md ring-4 ring-primary/20'
+                        ? 'bg-[#080808] text-white shadow-sm ring-4 ring-[#080808]/10'
                         : idx < step
-                          ? 'bg-primary/15 text-primary'
-                          : 'bg-muted text-muted-foreground'
+                          ? 'bg-[#f5f5f5] text-[#080808] border border-[#d8d8d8]'
+                          : 'bg-[#f9f9f9] text-[#888888] border border-[#d8d8d8]'
                     }`}
                   >
                     {idx < step ? (
@@ -769,13 +764,13 @@ export function RegistrationForm() {
                     )}
                   </div>
                   <span className={`text-[11px] font-medium leading-tight ${
-                    idx === step ? 'text-foreground font-semibold' : idx < step ? 'text-primary' : 'text-muted-foreground'
+                    idx === step ? 'text-[#080808] font-semibold' : idx < step ? 'text-[#080808]' : 'text-[#888888]'
                   }`}>
                     {s.label}
                   </span>
                 </button>
                 {idx < STEPS.length - 1 && (
-                  <div className={`flex-1 h-0.5 mx-1.5 rounded transition-colors ${idx < step ? 'bg-primary/40' : 'bg-border'}`} />
+                  <div className={`flex-1 h-0.5 mx-1.5 rounded transition-colors ${idx < step ? 'bg-[#080808]' : 'bg-[#d8d8d8]'}`} />
                 )}
               </div>
             )
@@ -787,25 +782,25 @@ export function RegistrationForm() {
       <div className="md:hidden mb-6">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <CurrentStepIcon className="w-5 h-5 text-primary" />
-            <span className="text-sm font-semibold text-foreground">{STEPS[step].label}</span>
+            <CurrentStepIcon className="w-5 h-5 text-[#080808]" />
+            <span className="text-sm font-semibold text-[#080808]">{STEPS[step].label}</span>
           </div>
-          <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-md">
+          <span className="text-xs font-medium text-[#5a5a5a] bg-[#f5f5f5] border border-[#d8d8d8] px-2.5 py-1 rounded-[4px]">
             {step + 1} / {STEPS.length}
           </span>
         </div>
-        <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-          <div className="h-full bg-primary rounded-full transition-all duration-500 ease-out" style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
+        <div className="w-full h-1.5 bg-[#d8d8d8] rounded-full overflow-hidden">
+          <div className="h-full bg-[#080808] rounded-full transition-all duration-500 ease-out" style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
         </div>
       </div>
 
       {/* ── Form card ─────────────────────────────────────────── */}
-      <div className="border border-border rounded-2xl bg-background p-5 sm:p-8 shadow-sm">
+      <div className="border border-[#d8d8d8] rounded-[8px] bg-white p-5 sm:p-8 shadow-sm">
         {/* Section header */}
         <div className="mb-6">
           <div className="flex items-center gap-2.5 mb-2">
-            <CurrentStepIcon className="w-5 h-5 text-primary" />
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+            <CurrentStepIcon className="w-5 h-5 text-[#080808]" />
+            <h3 className="text-xl sm:text-2xl font-semibold text-[#080808]">
               {STEPS[step].label === 'Personal' ? 'Personal Information'
                 : STEPS[step].label === 'Academic' ? 'Academic / Professional Information'
                 : STEPS[step].label === 'IEEE' ? 'IEEE Information'
@@ -816,19 +811,19 @@ export function RegistrationForm() {
                 : 'Participation & Logistics'}
             </h3>
           </div>
-          <div className="h-px bg-border" />
+          <div className="h-px bg-[#d8d8d8]" />
         </div>
 
         {renderStep()}
 
         {/* ── Navigation ──────────────────────────────────────── */}
-        <div className="flex justify-between items-center mt-8 pt-5 border-t border-border">
+        <div className="flex justify-between items-center mt-8 pt-5 border-t border-[#d8d8d8]">
           <div>
             {step > 0 && (
               <button
                 type="button"
                 onClick={goPrev}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold text-foreground bg-muted rounded-lg hover:bg-muted/80 transition-colors border border-border"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium text-[#080808] bg-white rounded-[4px] hover:bg-[#f5f5f5] transition-colors border border-[#d8d8d8] cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
                 Previous
@@ -840,7 +835,7 @@ export function RegistrationForm() {
               <button
                 type="button"
                 onClick={goNext}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-medium bg-[#080808] text-white rounded-[4px] hover:bg-[#222222] transition-all shadow-sm cursor-pointer"
               >
                 Next
                 <ChevronRight className="w-4 h-4" />
@@ -850,7 +845,7 @@ export function RegistrationForm() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium bg-[#080808] text-white rounded-[4px] hover:bg-[#222222] transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isSubmitting ? (
                   <>
