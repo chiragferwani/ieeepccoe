@@ -4,7 +4,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
-import { Mail, MapPin, Clock } from 'lucide-react'
+import { Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 import { FormEvent, useState } from 'react'
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -195,20 +195,20 @@ export default function ContactPage() {
               <Card className="p-6 border border-border">
                 <h3 className="font-bold text-foreground mb-4">Rapid Response</h3>
                 <ul className="space-y-3 text-muted-foreground text-sm">
-                  <li className="flex gap-2">
-                    <span className="text-primary">✓</span>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Email responses within 24 hours</span>
                   </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">✓</span>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Dedicated participant assistance</span>
                   </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">✓</span>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Visa assistance available</span>
                   </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">✓</span>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Travel coordination support</span>
                   </li>
                 </ul>
