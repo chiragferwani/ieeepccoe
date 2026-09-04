@@ -23,11 +23,14 @@ lerna-debug.log*
 
 # environment variables
 .env
+.env*
 .env.local
 .env.development.local
 .env.test.local
 .env.production
 .env.production.local
+*.env
+*.env.local
 
 # macOS-specific files
 .DS_Store
@@ -44,3 +47,7 @@ lerna-debug.log*
 # Vercel / Netlify
 .vercel/
 .netlify/
+
+# Supabase
+.supabase/
+supabase/.temp/

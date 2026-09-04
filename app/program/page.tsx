@@ -3,6 +3,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
 import { Arrow } from '@/components/ui/arrow'
+import { CheckCircle2 } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Program Schedule — PCCOE Summer School 2026',
@@ -110,28 +111,28 @@ export default function ProgramPage() {
             <div className="bg-muted rounded-lg p-6 border border-border">
               <h3 className="text-xl font-bold text-foreground mb-4">What&apos;s Included</h3>
               <ul className="space-y-2 text-sm">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">All course materials and slides</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">Daily lunch and refreshments</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">Lab environment with all necessary software</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">Networking events and evening reception</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">Instructor contact information</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                   <span className="text-foreground">IEEE CIS certificate of completion</span>
                 </li>
               </ul>

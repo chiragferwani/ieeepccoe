@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
-import { MapPin, Plane, Hotel, Utensils } from 'lucide-react'
+import { MapPin, Plane, Hotel, Utensils, Train } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Venue & Travel — PCCOE Summer School 2026',
@@ -80,7 +80,7 @@ export default function VenuePage() {
 
             <Card className="p-6 border border-border">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 text-primary">🚇</div>
+                <Train className="w-8 h-8 text-primary" />
                 <h3 className="text-xl font-bold text-foreground">Local Transport</h3>
               </div>
               <ul className="space-y-2 text-muted-foreground">

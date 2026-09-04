@@ -6,7 +6,7 @@ import { HighlightGrid } from '@/components/sections/HighlightGrid'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle2, Star } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
 import Image from 'next/image'
 import { SpotlightTicker } from '@/components/sections/SpotlightTicker'
@@ -175,9 +175,7 @@ export default function Home() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">
-                      ★
-                    </span>
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
                 <p className="text-foreground italic mb-6">&quot;{testimonial.quote}&quot;</p>

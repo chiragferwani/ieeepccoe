@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, MapPin } from 'lucide-react'
+import { Calendar, MapPin, GraduationCap } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
 
 export function HeroSection() {
@@ -112,7 +112,7 @@ export function HeroSection() {
             <div className="text-sm text-muted-foreground">Pune, India</div>
           </div>
           <div className="flex flex-col items-center gap-2 py-4">
-            <div className="w-6 h-6 text-primary">🎓</div>
+            <GraduationCap className="w-6 h-6 text-primary" />
             <div className="font-semibold text-foreground">15+ Expert Speakers</div>
             <div className="text-sm text-muted-foreground">Industry & Academia Leaders</div>
           </div>
