@@ -4,7 +4,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, MapPin, Clock } from 'lucide-react'
 import { FormEvent, useState } from 'react'
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -55,28 +55,17 @@ export default function ContactPage() {
       </section>
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             {/* Contact Cards */}
             <Card className="p-6 border border-border">
               <div className="flex items-center gap-3 mb-4">
                 <Mail className="w-6 h-6 text-primary" />
                 <h3 className="text-lg font-bold text-foreground">Email</h3>
               </div>
-              <p className="text-muted-foreground mb-4">General inquiries and registration support</p>
-              <a href="mailto:pallavi.dhade@pccoepune.org" className="text-primary font-semibold hover:underline">
-                pallavi.dhade@pccoepune.org
-              </a>
-            </Card>
-
-            <Card className="p-6 border border-border">
-              <div className="flex items-center gap-3 mb-4">
-                <Phone className="w-6 h-6 text-primary" />
-                <h3 className="text-lg font-bold text-foreground">Phone</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">Pune office (IST timezone)</p>
-              <a href="tel:+917620343611" className="text-primary font-semibold hover:underline">
-                +917620343611
+              <p className="text-muted-foreground mb-4">General inquiries, registration support, and collaborations</p>
+              <a href="mailto:cissummerschool@pccoepune.org" className="text-primary font-semibold hover:underline text-lg">
+                cissummerschool@pccoepune.org
               </a>
             </Card>
 
@@ -85,10 +74,10 @@ export default function ContactPage() {
                 <MapPin className="w-6 h-6 text-primary" />
                 <h3 className="text-lg font-bold text-foreground">Location</h3>
               </div>
-              <p className="text-muted-foreground text-sm">
-                Pimpri Chinchwad College of Engineering (PCCoE)<br />
-                Sector 26, Pradhikaran, Nigdi<br />
-                Pune - 411044, Maharashtra, India
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Department of CSE (AI &amp; ML), PCCoE<br />
+                Pimpri Chinchwad College of Engineering<br />
+                Sector 26, Pradhikaran, Nigdi, Pune – 411044, Maharashtra, India
               </p>
             </Card>
           </div>
@@ -212,7 +201,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
-                    <span>Phone support during office hours</span>
+                    <span>Dedicated participant assistance</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="text-primary">✓</span>
@@ -247,12 +236,9 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Ruturaj Pandharkar', link: 'https://www.linkedin.com/in/ruturaj-pandharkar/', image: '/ruturaj.jpeg' },
+              { name: 'Vrushabh Hirap', link: 'https://www.linkedin.com/in/vrushabh-hirap/', image: '/vrushabh.jpeg' },
               { name: 'Chirag Ferwani', link: 'https://www.linkedin.com/in/chiragferwani', image: '/chiragferwani.png' },
               { name: 'Kshitij Jadhav', link: 'https://www.linkedin.com/in/kshitij-jadhav/', image: '/kshitij.png' },
-              { name: 'Debottam Debnath', link: 'https://www.linkedin.com/in/debottam-debnath/', image: '/debottam.png' },
-              { name: 'Anushka Shinde', link: 'https://www.linkedin.com/in/anushka-shinde/', image: '/anushka.png' },
-              { name: 'Vrushabh Hirap', link: 'https://www.linkedin.com/in/vrushabh-hirap/', image: '/vrushabh.jpeg' },
             ].map((member, idx) => (
               <Card key={idx} className="p-5 border border-border flex flex-col items-center justify-between text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 max-w-sm mx-auto w-full">
                 <div className="flex flex-col items-center w-full">

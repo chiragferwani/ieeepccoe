@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://pccoesummerschool.vercel.app'
+const BASE_URL = 'https://ieeecissummerschool2026.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date('2026-06-14')
@@ -43,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${BASE_URL}/team`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/faq`,
       lastModified,
       changeFrequency: 'monthly',
@@ -53,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/admin`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 }

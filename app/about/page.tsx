@@ -5,14 +5,14 @@ import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About PCCOE Summer School 2026',
+  title: 'About — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
   description:
-    'Discover the PCCOE Summer School 2026 — an intensive IEEE CIS program designed for students, researchers, and professionals seeking to master Fine-Tuning LLMs and Inference Optimization at PCCoE Pune.',
-  alternates: { canonical: 'https://pccoesummerschool.vercel.app/about' },
+    'Discover the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE — an intensive IEEE CIS program designed for students, researchers, and professionals seeking to master Fine-Tuning LLMs and Inference Optimization at PCCoE Pune.',
+  alternates: { canonical: 'https://ieeecissummerschool2026.vercel.app/about' },
   openGraph: {
-    title: 'About PCCOE Summer School 2026',
-    description: 'Learn why the PCCOE Summer School is the premier AI residential program in India. World-class instructors, hands-on labs, IEEE CIS certificate.',
-    url: 'https://pccoesummerschool.vercel.app/about',
+    title: 'About — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
+    description: 'Learn why the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE is the premier AI residential program in India. World-class instructors, hands-on labs, IEEE CIS certificate.',
+    url: 'https://ieeecissummerschool2026.vercel.app/about',
   },
 }
 
@@ -35,9 +35,10 @@ export default function AboutPage() {
       <section className="py-8 bg-muted/20 border-b border-border/50">
         <div className="max-w-4xl mx-auto text-center px-4">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-            Organized & Supported By
+            Organized &amp; Supported By
           </p>
           <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-background py-6 px-8 rounded-xl border border-border/60 max-w-4xl mx-auto overflow-x-auto no-scrollbar">
+            {/* 1. IEEE CIS */}
             <div className="relative h-20 w-56 flex-shrink-0">
               <Image
                 src="/ieeecis.png"
@@ -47,15 +48,17 @@ export default function AboutPage() {
                 className="object-contain"
               />
             </div>
-            <div className="relative h-20 w-36 flex-shrink-0">
+            {/* 2. ARC */}
+            <div className="relative h-20 w-44 flex-shrink-0">
               <Image
-                src="/ieeecs.jpg"
-                alt="IEEE CS Logo"
+                src="/arc-logo.svg"
+                alt="ARC Logo"
                 fill
-                sizes="(max-width: 768px) 144px, 144px"
-                className="object-contain rounded-sm"
+                sizes="(max-width: 768px) 176px, 176px"
+                className="object-contain"
               />
             </div>
+            {/* 3. IEEE Pune Section */}
             <div className="relative h-20 w-36 flex-shrink-0">
               <Image
                 src="/ieeepune.png"
@@ -65,10 +68,11 @@ export default function AboutPage() {
                 className="object-contain"
               />
             </div>
+            {/* 4. PCCoE */}
             <div className="relative h-20 w-36 flex-shrink-0">
               <Image
                 src="/pccoe.jpeg"
-                alt="PCCoE Pune Logo"
+                alt="PCCoE Logo"
                 fill
                 sizes="(max-width: 768px) 144px, 144px"
                 className="object-contain rounded-md"
