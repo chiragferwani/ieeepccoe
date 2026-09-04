@@ -54,17 +54,9 @@ export function ImageSlider() {
       image: '/images/pccoecampus.jpeg',
       tag: 'WELCOME TO PCCOE',
       title: 'PCCoE Campus, Pune',
-      subtitle: 'Hosting IEEE CIS Summer School 2026',
-      description: 'Pimpri Chinchwad College of Engineering is proud to host the 6-day residential summer school on Fine-Tuning LLMs & Inference Optimization.',
+      subtitle: 'Hosting IEEE CIS Summer School',
+      description: 'Department of CSE (AI & ML), PCCOE is proud to host the 6-day residential summer school on Fine-Tuning LLMs & Inference Optimization.',
       caption: 'PIMPRI CHINCHWAD COLLEGE OF ENGINEERING CAMPUS',
-    },
-    {
-      image: '/images/nirf-ranking.jpeg',
-      tag: 'NATIONAL RANKINGS',
-      title: 'NIRF Ranked Institution',
-      subtitle: 'Top Tier Engineering College in India',
-      description: 'Recognized by the Ministry of Education, Govt of India, for academic excellence, infrastructure, and outcomes.',
-      caption: 'PCCoE NIRF RANKINGS AND RECOGNITIONS',
     },
     {
       image: '/images/survey.jpeg',
@@ -115,9 +107,8 @@ export function ImageSlider() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
           >
             {/* Background Image */}
             <Image
@@ -204,9 +195,8 @@ export function ImageSlider() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'w-8 bg-primary' : 'w-2.5 bg-white/50'
-              }`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${index === currentSlide ? 'w-8 bg-primary' : 'w-2.5 bg-white/50'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

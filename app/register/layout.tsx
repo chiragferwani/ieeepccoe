@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Register — PCCOE Summer School 2026',
+  title: 'Register — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
   description:
-    'Register for the PCCOE Summer School 2026 on Fine-Tuning LLMs & Inference Optimization. Limited to 80 participants. June 22–27, 2026 at PCCoE Pune. IEEE CIS certified program.',
-  alternates: { canonical: 'https://pccoesummerschool.vercel.app/register' },
+    'Register for the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE on Fine-Tuning LLMs & Inference Optimization. June 22–27, 2026 at PCCoE Pune.',
+  alternates: { canonical: 'https://ieeecissummerschool2026.vercel.app/register' },
   openGraph: {
-    title: 'Register Now — PCCOE Summer School 2026',
-    description: 'Secure your spot at the IEEE CIS PCCOE Summer School 2026. Only 80 seats available. Fine-tune LLMs, earn a certificate, and network with AI experts.',
-    url: 'https://pccoesummerschool.vercel.app/register',
+    title: 'Register Now — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
+    description: 'Secure your spot at the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE. Fine-tune LLMs, earn a certificate, and network with AI experts.',
+    url: 'https://ieeecissummerschool2026.vercel.app/register',
   },
 }
 

@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us — PCCOE Summer School 2026',
+  title: 'Contact Us — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
   description:
-    'Get in touch with the PCCOE Summer School 2026 organising team. Reach out for registration queries, sponsorship, speaker invitations, or general information.',
-  alternates: { canonical: 'https://pccoesummerschool.vercel.app/contact' },
+    'Get in touch with the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE organising team. Reach out for registration queries, sponsorship, speaker invitations, or general information.',
+  alternates: { canonical: 'https://ieeecissummerschool2026.vercel.app/contact' },
   openGraph: {
-    title: 'Contact Us — PCCOE Summer School 2026',
-    description: 'Contact the PCCOE Summer School 2026 team for queries about registration, accommodation, or the IEEE CIS Summer School program.',
-    url: 'https://pccoesummerschool.vercel.app/contact',
+    title: 'Contact Us — IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE',
+    description: 'Contact the IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE team for queries about registration, accommodation, or program details.',
+    url: 'https://ieeecissummerschool2026.vercel.app/contact',
   },
 }
 

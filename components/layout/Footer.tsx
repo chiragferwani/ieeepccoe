@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,9 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">PCCOE Summer School</h3>
+            <h3 className="font-bold text-foreground mb-2">IEEE CIS Summer School</h3>
+            <p className="text-xs font-medium text-primary mb-3">
+              hosted by Department of CSE (AI &amp; ML), PCCOE
+            </p>
             <p className="text-sm text-muted-foreground mb-4">
-              Advancing knowledge and skills in computational intelligence through intensive learning and mentorship.
+              Advancing knowledge and skills in computational intelligence through intensive hands-on learning and mentorship.
             </p>
           </div>
 
@@ -27,7 +30,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/speakers" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Speakers
+                  Plenary Presenters
+                </Link>
+              </li>
+              <li>
+                <Link href="/team" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Our Team
                 </Link>
               </li>
               <li>
@@ -58,14 +66,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://ieee-cis.org" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://ieee-cis.org" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                   IEEE CIS Society
                 </a>
               </li>
               <li>
-                <a href="https://cis.ieee.org/events" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Other Events
-                </a>
+                <Link href="/admin" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Admin Portal
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,20 +83,14 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-start gap-2">
-                <Mail size={16} className="mt-0.5 flex-shrink-0" />
-                <a href="mailto:pallavi.dhade@pccoepune.org" className="hover:text-foreground transition-colors">
-                  pallavi.dhade@pccoepune.org
+                <Mail size={16} className="mt-0.5 flex-shrink-0 text-primary" />
+                <a href="mailto:cissummerschool@pccoepune.org" className="hover:text-foreground transition-colors break-all">
+                  cissummerschool@pccoepune.org
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                <span>Pimpri Chinchwad College of Engineering, Pune, India</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Phone size={16} className="mt-0.5 flex-shrink-0" />
-                <a href="tel:+917620343611" className="hover:text-foreground transition-colors">
-                  +917620343611
-                </a>
+                <MapPin size={16} className="mt-0.5 flex-shrink-0 text-primary" />
+                <span>PCCoE, Sector 26, Pradhikaran, Nigdi, Pune – 411044, India</span>
               </div>
             </div>
           </div>

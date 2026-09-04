@@ -6,7 +6,7 @@ import { HighlightGrid } from '@/components/sections/HighlightGrid'
 import { ScheduleSwitcher } from '@/components/sections/ScheduleSwitcher'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
-import { CheckCircle2, Star } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
 import Image from 'next/image'
 import { SpotlightTicker } from '@/components/sections/SpotlightTicker'
@@ -21,21 +21,6 @@ export default function Home() {
     'Build end-to-end fine-tuning and deployment pipelines',
     'Develop production-grade capstone projects with real applications',
     'Network with industry leaders and earn IEEE CIS certificate',
-  ]
-
-  const testimonials = [
-    {
-      name: 'Dr. Aniruddha Joshi',
-      role: 'Founder & CEO',
-      company: 'Atreya Innovations',
-      quote: 'This program bridges the gap between theory and real-world deployment. Essential for anyone building AI systems.',
-    },
-    {
-      name: 'Dr. Pratap Sanap',
-      role: 'Head of Research & Innovation',
-      company: 'Neilsoft',
-      quote: 'The hands-on clinics and capstone projects provide invaluable experience in productionizing LLMs at scale.',
-    },
   ]
 
   return (
@@ -59,7 +44,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">Why Attend?</h2>
           <p className="text-center text-lg text-muted-foreground mb-12">
-            A 6-day intensive residential program at Pimpri Chinchwad College of Engineering. Learn from world-class researchers and industry experts in fine-tuning LLMs and inference optimization.
+            A 6-day intensive residential and hybrid program hosted by Department of CSE (AI &amp; ML), PCCOE. Learn from world-class researchers and industry experts in fine-tuning LLMs and inference optimization.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -94,99 +79,52 @@ export default function Home() {
       {/* Schedule Section */}
       <ScheduleSwitcher />
 
-      {/* Speakers Preview */}
+      {/* Plenary Presenters Preview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted border-y border-border">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Expert Instructors</h2>
-            <p className="text-lg text-muted-foreground">
-              Learn from leading researchers and industry practitioners in computational intelligence
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest bg-primary/10 text-primary px-3 py-1.5 rounded-full border border-primary/20">
+              Distinguished Faculty &amp; Experts
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-4 mb-4">Plenary Presenters</h2>
+            <p className="text-xl font-medium text-foreground max-w-2xl mx-auto mb-4">
+              Renowned professors and industry experts will be presenting.
+            </p>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+              Our comprehensive six-day curriculum features talks, tutorials, and hands-on clinics led by preeminent researchers and practitioners from top academic institutes and global tech pioneers.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {/* Featured Institutions Chips Grid */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-10 max-w-3xl mx-auto">
             {[
-              {
-                name: 'Dr. Debmalya Biswas',
-                role: 'Executive Director, UBS Switzerland',
-                topic: 'Privacy & Security in LLM Systems',
-                image: '/speakers/debmalyabiswas.jpeg',
-              },
-              {
-                name: 'Dr. Aniruddha Joshi',
-                role: 'Founder & CEO, Atreya Innovations',
-                topic: 'AI in Healthcare & Diagnostics',
-                image: '/speakers/aniruddhajoshi.jpeg',
-              },
-              {
-                name: 'Dr. Pratap Sanap',
-                role: 'Head R&I, Neilsoft Pune',
-                topic: 'Deploying LLMs at Scale',
-                image: '/speakers/pratapsanap.png',
-              },
-            ].map((speaker, idx) => (
-              <Card 
-                key={idx} 
-                className="p-6 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between items-center text-center"
-                style={{ animation: `fadeInUp 0.6s ease-out ${0.1 * idx}s both` }}
+              'IIT Bombay',
+              'ISI Kolkata',
+              'IISER Pune',
+              'VNIT Nagpur',
+              'NVIDIA (California)',
+              'UBS (Switzerland)',
+              'TCS Research',
+              'Dassault Systèmes',
+              'Neilsoft',
+              'Microsoft Research Collaborations',
+            ].map((institution, idx) => (
+              <span
+                key={idx}
+                className="px-4 py-2 bg-background border border-border/80 rounded-lg text-sm font-semibold text-foreground shadow-sm hover:border-primary/50 transition-colors"
               >
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-violet-200 to-blue-200 rounded-full mb-4 overflow-hidden relative border border-border/40 shadow-sm flex-shrink-0 mx-auto">
-                    {speaker.image && (
-                      <Image
-                        src={speaker.image}
-                        alt={speaker.name}
-                        fill
-                        sizes="80px"
-                        className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                      />
-                    )}
-                  </div>
-                  <h3 className="font-bold text-foreground mb-1">{speaker.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3">{speaker.role}</p>
-                </div>
-                <p className="text-sm font-semibold text-primary border-t border-border/40 pt-3 mt-2 w-full text-center">{speaker.topic}</p>
-              </Card>
+                {institution}
+              </span>
             ))}
           </div>
 
-          <div className="text-center">
+          <div>
             <Link
               href="/speakers"
-              className="group inline-flex items-center gap-2 px-6 py-2 text-primary font-semibold transition-all"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-sm"
             >
-              View All Speakers <Arrow size={18} />
+              Learn More About Plenary Sessions <Arrow size={18} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">Participant Feedback</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial, idx) => (
-              <Card 
-                key={idx} 
-                className="p-8 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                style={{ animation: `fadeInUp 0.6s ease-out ${0.1 * idx}s both` }}
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-foreground italic mb-6">&quot;{testimonial.quote}&quot;</p>
-                <div>
-                  <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.company}
-                  </p>
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

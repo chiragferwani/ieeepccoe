@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/static/'],
       },
     ],
-    sitemap: 'https://pccoesummerschool.vercel.app/sitemap.xml',
-    host: 'https://pccoesummerschool.vercel.app',
+    sitemap: 'https://ieeecissummerschool2026.vercel.app/sitemap.xml',
+    host: 'https://ieeecissummerschool2026.vercel.app',
   }
 }

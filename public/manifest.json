@@ -1,7 +1,7 @@
 {
-  "name": "PCCOE Summer School 2026",
-  "short_name": "PCCOE Summer School",
-  "description": "IEEE CIS Summer School on Fine-Tuning LLMs & Inference Optimization — June 22–27, 2026 at PCCoE Pune",
+  "name": "IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE",
+  "short_name": "Ieeecissummerschool",
+  "description": "IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE — June 22–27, 2026",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

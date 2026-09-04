@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, MapPin, GraduationCap } from 'lucide-react'
+import { CalendarDays, MapPin, Users2 } from 'lucide-react'
 import { Arrow } from '@/components/ui/arrow'
 
 export function HeroSection() {
@@ -20,22 +20,22 @@ export function HeroSection() {
 
         {/* Organizer Eyebrow */}
         <div className="mb-4 animate-fadeInUp" style={{ animationDelay: '0.05s' }}>
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-primary/10 text-primary px-3 py-1.5 rounded-full border border-primary/20">
-            PCCoE Organizes
+          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest bg-primary/10 text-primary px-3.5 py-1.5 rounded-full border border-primary/20">
+            PCCoE
           </span>
           <span className="block text-sm sm:text-base font-semibold uppercase tracking-wider text-muted-foreground mt-3">
-            IEEE Computational Intelligence Society Summer School 2026
+            IEEE CIS Summer School hosted by Department of CSE (AI &amp; ML), PCCOE
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-          Master Fine-Tuning LLMs & Inference Optimization
+          Master Fine-Tuning LLMs &amp; Inference Optimization
         </h1>
 
         {/* Subheading */}
         <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-          An intensive 6-day residential summer school hosted by Pimpri Chinchwad College of Engineering. Learn from leading researchers and industry experts how to build, optimize, and deploy large language models for real-world applications.
+          An intensive 6-day residential summer school hosted by Department of CSE (AI &amp; ML), PCCOE. Learn from leading researchers and industry experts how to build, optimize, and deploy large language models for real-world applications.
         </p>
 
         {/* CTA Buttons */}
@@ -57,9 +57,10 @@ export function HeroSection() {
         {/* Partner Logos */}
         <div className="mb-12 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-            Organized & Supported By
+            Organized &amp; Supported By
           </p>
           <div className="flex flex-row flex-nowrap items-center justify-start lg:justify-center gap-6 md:gap-10 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-white/30 dark:border-white/5 py-6 px-8 rounded-xl shadow-md max-w-4xl mx-auto overflow-x-auto no-scrollbar">
+            {/* 1. IEEE CIS */}
             <div className="relative h-20 w-56 flex-shrink-0">
               <Image
                 src="/ieeecis.png"
@@ -69,15 +70,17 @@ export function HeroSection() {
                 className="object-contain"
               />
             </div>
-            <div className="relative h-20 w-36 flex-shrink-0">
+            {/* 2. ARC */}
+            <div className="relative h-20 w-44 flex-shrink-0">
               <Image
-                src="/ieeecs.jpg"
-                alt="IEEE CS Logo"
+                src="/arc-logo.svg"
+                alt="ARC Logo"
                 fill
-                sizes="(max-width: 768px) 144px, 144px"
-                className="object-contain rounded-sm"
+                sizes="(max-width: 768px) 176px, 176px"
+                className="object-contain"
               />
             </div>
+            {/* 3. IEEE Pune Section */}
             <div className="relative h-20 w-36 flex-shrink-0">
               <Image
                 src="/ieeepune.png"
@@ -87,10 +90,11 @@ export function HeroSection() {
                 className="object-contain"
               />
             </div>
+            {/* 4. PCCoE */}
             <div className="relative h-20 w-36 flex-shrink-0">
               <Image
                 src="/pccoe.jpeg"
-                alt="PCCoE Pune Logo"
+                alt="PCCoE Logo"
                 fill
                 sizes="(max-width: 768px) 144px, 144px"
                 className="object-contain rounded-md"
@@ -99,22 +103,30 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-border">
-          <div className="flex flex-col items-center gap-2 py-4">
-            <Calendar className="w-6 h-6 text-primary" />
-            <div className="font-semibold text-foreground">June 22-27, 2026</div>
+        {/* Info Cards with enlarged, styled icons */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-border">
+          <div className="group flex flex-col items-center gap-2 py-4 px-3 rounded-xl hover:bg-muted/40 transition-colors">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-1 border border-primary/20 shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <CalendarDays className="w-8 h-8" />
+            </div>
+            <div className="font-bold text-foreground text-base">June 22-27, 2026</div>
             <div className="text-sm text-muted-foreground">6 Days Intensive Program</div>
           </div>
-          <div className="flex flex-col items-center gap-2 py-4">
-            <MapPin className="w-6 h-6 text-primary" />
-            <div className="font-semibold text-foreground">PCCoE Pune</div>
+
+          <div className="group flex flex-col items-center gap-2 py-4 px-3 rounded-xl hover:bg-muted/40 transition-colors">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-1 border border-primary/20 shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <MapPin className="w-8 h-8" />
+            </div>
+            <div className="font-bold text-foreground text-base">PCCoE Pune</div>
             <div className="text-sm text-muted-foreground">Pune, India</div>
           </div>
-          <div className="flex flex-col items-center gap-2 py-4">
-            <GraduationCap className="w-6 h-6 text-primary" />
-            <div className="font-semibold text-foreground">15+ Expert Speakers</div>
-            <div className="text-sm text-muted-foreground">Industry & Academia Leaders</div>
+
+          <div className="group flex flex-col items-center gap-2 py-4 px-3 rounded-xl hover:bg-muted/40 transition-colors">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-1 border border-primary/20 shadow-sm transition-transform duration-300 group-hover:scale-110">
+              <Users2 className="w-8 h-8" />
+            </div>
+            <div className="font-bold text-foreground text-base">Plenary Presenters</div>
+            <div className="text-sm text-muted-foreground">Industry &amp; Academia Leaders</div>
           </div>
         </div>
       </div>

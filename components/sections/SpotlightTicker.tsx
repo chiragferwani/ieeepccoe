@@ -4,10 +4,10 @@ import React from 'react'
 
 export function SpotlightTicker() {
   const news = [
-    'IEEE CIS Summer School 2026 registrations are now open. Secure your seat today!',
-    'Hosted by the Department of CSE (AI & ML), Pimpri Chinchwad College of Engineering (PCCoE), Pune.',
+    'IEEE CIS Summer School hosted by Department of CSE (AI & ML), PCCOE registrations are now open. Secure your seat today!',
+    'Hosted by Department of CSE (AI & ML), PCCOE, Pune — June 22–27, 2026.',
     '6 Days of intensive residential training with hands-on clinics on GPU-enabled labs.',
-    'Supported by IEEE Computational Intelligence Society, IEEE Computer Society, and IEEE Pune Section.',
+    'Supported by IEEE Computational Intelligence Society, ARC, and IEEE Pune Section.',
     'Earn a prestigious IEEE CIS Certificate of Participation and build industry-grade LLM projects.'
   ]
 
